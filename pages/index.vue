@@ -1,14 +1,17 @@
 <template>
   <div>
-    <HeroCard></HeroCard>
+    <LogibugNavbar />
   </div>
 </template>
 
 <script>
-import HeroCard from '../components/HeroCard.vue';
+import LogibugNavbar from '../components/major/LogibugNavbar.vue';
 
-export default {
-    name: "IndexPage",
-    components: { HeroCard }
+  export default {
+    components: { LogibugNavbar }
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
