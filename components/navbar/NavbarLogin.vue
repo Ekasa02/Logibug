@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Login</a>
+        <nuxt-link to="/login" class="text-blue-500 hover:text-blue-700 font-medium">Login</nuxt-link>
     </div>
 </template>
 
