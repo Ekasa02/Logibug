@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form class="max-w-md mx-auto">
+        <form class="max-w-md mx-auto" @submit.prevent="login">
             <div class="mb-4">
                 <input id="email" v-model="email" type="email" placeholder="Email"
                     class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -18,8 +18,9 @@
             </div>
         </form>
         <div class="text-center">
-        <p class="text-gray-600">Don't have an account? <nuxt-link to="/register" class="text-blue-500 font-medium hover:underline">Register</nuxt-link></p>
-    </div>
+            <p class="text-gray-600">Don't have an account? <nuxt-link to="/register"
+                    class="text-blue-500 font-medium hover:underline">Register</nuxt-link></p>
+        </div>
     </div>
 </template>
   
@@ -29,6 +30,11 @@ export default {
         return {
             email: '',
             password: ''
+        }
+    },
+    methods: {
+        login() {
+            this.$router.push('/dashboard')
         }
     }
 }
