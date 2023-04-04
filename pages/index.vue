@@ -9,11 +9,9 @@
 import LogibugHero from '../components/major/LogibugHero..vue';
 import LogibugNavbar from '../components/major/LogibugNavbar.vue';
 
-  export default {
-    components: { LogibugNavbar, LogibugHero }
+export default {
+  components: { LogibugNavbar, LogibugHero }
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
