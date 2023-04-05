@@ -1,6 +1,6 @@
 <template>
-    <div class="flex justify-center items-center">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+    <div class="flex justify-center items-center mt-[60px]">
+        <button class="bg-[#554AF0] text-white text-[20px] leading-[30px] font-bold py-[15px] px-[64px] rounded-xl">
             Testing Now
         </button>
     </div>

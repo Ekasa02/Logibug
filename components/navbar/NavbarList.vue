@@ -1,6 +1,6 @@
 <template>
-    <div class="flex justify-center items-center">
-        <ul class="flex flex-row justify-center space-x-4 text-xl font-medium text-gray-600">
+    <div class="flex justify-center items-center ml-[120px]">
+        <ul class="flex flex-row justify-center space-x-[40px] text-l font-medium">
             <li><a href="#">Why Logibug</a></li>
             <li><a href="#">Features</a></li>
             <li><a href="#">Products</a></li>
