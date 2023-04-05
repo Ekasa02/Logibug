@@ -1,7 +1,7 @@
 <template>
     <div class="logo flex">
-        <!-- <img src="/path/to/your/logo.png" alt="LogiBug Logo"> -->
-        <h1 class="text-5xl font-medium pb-32">LogiBug</h1>
+        <img src="./svgs/LogibugLogo.svg" alt="LogiBug Logo">
+        <h1 class="text-[#333333] text-2xl font-bold ml-[5px] w-[30px] h-[30px]">LogiBug</h1>
     </div>
 </template>
 
