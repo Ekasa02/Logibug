@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[50vh] w-[70vw] bg-cover bg-center bg-blue-300">
+    <div class="h-[400px] w-[860px] mt-[50px] bg-cover bg-center bg-blue-300">
 
     </div>
 </template>
