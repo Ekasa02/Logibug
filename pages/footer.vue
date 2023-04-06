@@ -14,7 +14,9 @@
           <contact-footer></contact-footer>
         </div>
       </div>
-      <main-footer></main-footer>
+      <div style="display: flex; justify-content: center; padding-top:150px">
+        <main-footer></main-footer>
+      </div>
     </div>
     
    
