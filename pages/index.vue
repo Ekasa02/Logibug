@@ -1,18 +1,18 @@
 <template>
   <div>
     <LogibugNavbar />
-    <!-- <LogibugHero /> -->
+    <LogibugHero />
   </div>
 </template>
 
 <script>
-// import LogibugHero from '../components/major/LogibugHero.vue';
+import LogibugHero from '../components/major/LogibugHero.vue';
 import LogibugNavbar from '../components/major/LogibugNavbar.vue';
 
   export default {
     components: {
        LogibugNavbar, 
-      //  LogibugHero
+       LogibugHero
      }
 }
 </script>
