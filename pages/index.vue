@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <LogibugNavbar />
     <LogibugHero />
@@ -17,4 +17,4 @@ import LogibugNavbar from '../components/major/LogibugNavbar.vue';
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped></style> -->
