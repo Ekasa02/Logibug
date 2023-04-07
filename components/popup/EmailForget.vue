@@ -5,8 +5,8 @@
                 <img src="../popup/svg/CloseCircle.svg" alt="image" >
             </div>
             <div class="pt-5 pl-11 pr-7">
-                <img src="../popup/svg/Group 52.svg" alt="image">
-                <p class="text-center pt-7 font-['Montserrat'] text-[20px]">Congratulations, your password has been <br/> successfully changed! Don't forget to <br/> remember your new password.</p>
+                <img src="../popup/svg/Group 51.svg" alt="image">
+                <p class="text-center pt-7 font-['Montserrat'] text-[20px]">Please check your email to change <br/> the password</p>
             </div>
         </div>
     </div>
