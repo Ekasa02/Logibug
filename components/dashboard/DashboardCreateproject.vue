@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+        <button class="bg-[#554AF0] hover:bg-blue-600 text-white font-bold py-[8.5px] px-8 rounded-[8px]">
             Create Project
         </button>
     </div>
