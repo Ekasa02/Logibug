@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="bg-gray-200 flex items-center justify-end p-4">
+        <div class="flex items-center justify-end py-[14px] pr-[100px] border-b-[1px] border-gray-300">
             <div class="ml-auto">
                 <LogibugProfile @click="showPopup = true" />
             </div>

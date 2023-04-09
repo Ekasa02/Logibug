@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1 class="text-3xl font-bold text-gray-800">Project</h1>
+    <div class="mt-[40px]">
+        <h1 class="text-[32px] leading-[48px] font-bold text-[#1a1a1a]">Project</h1>
     </div>
 </template>
 

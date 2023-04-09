@@ -1,11 +1,14 @@
 <template>
     <div>
         <DashboardProfile />
-        <DashboardTitle user-name="John" />
-        <DashboardProject />
-        <div class="flex justify-between">
-            <DashboardSearch />
-            <DashboardButton />
+        <div style="padding: 0 100px;">
+            <DashboardTitle user-name="John" />
+            <DashboardLevel level="Beginner" />
+            <DashboardProject />
+            <div class="flex justify-between" style="margin-top: 15px;">
+                <DashboardSearch />
+                <DashboardButton />
+            </div>
         </div>
         <DashboardTable :projects="projects" />
     </div>
@@ -18,9 +21,10 @@ import DashboardSearch from '../components/dashboard/DashboardSearchproject.vue'
 import DashboardTitle from '../components/dashboard/DashboardTitle.vue';
 import DashboardProject from '../components/dashboard/DashboardProject.vue';
 import DashboardTable from '../components/dashboard/DashboardTable.vue';
+import DashboardLevel from '../components/dashboard/DashboardLevel.vue';
 
 export default {
-    components: { DashboardProfile, DashboardTitle, DashboardSearch, DashboardButton, DashboardProject, DashboardTable },
+    components: { DashboardProfile, DashboardTitle, DashboardSearch, DashboardButton, DashboardProject, DashboardTable, DashboardLevel },
     data() {
         return {
             projects: [
