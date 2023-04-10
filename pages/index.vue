@@ -1,20 +1,20 @@
-<!-- <template>
+<template>
   <div>
     <LogibugNavbar />
-    <!-- <LogibugHero /> -->
+    <LogibugTest />
   </div>
 </template>
 
 <script>
-// import LogibugHero from '../components/major/LogibugHero.vue';
 import LogibugNavbar from '../components/major/LogibugNavbar.vue';
+import LogibugTest from '../components/major/LogibugJumbotron.vue';
 
-  export default {
-    components: {
-       LogibugNavbar, 
-      //  LogibugHero
-     }
+export default {
+  components: {
+    LogibugNavbar,
+    LogibugTest
+  }
 }
 </script>
 
-<style lang="scss" scoped></style> -->
+<style lang="scss" scoped></style>

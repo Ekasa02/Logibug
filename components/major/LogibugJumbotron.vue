@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="flex flex-col items-center justify-center py-[100px]">
         <HeroTitle />
         <HeroButton />
@@ -16,4 +16,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style> -->
+<style lang="scss" scoped></style>
