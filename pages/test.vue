@@ -1,14 +1,14 @@
 <template>
-    <DeletePopupVue/>
+    <dashboard-popup></dashboard-popup>
 </template>
 
 <script>
-import DeletePopupVue from "../components/deleteproject/DeletePopup.vue";
+import DashboardPopup from "../components/dashboard/DashboardPopup.vue";
 
 
 export default {
     components:{
-        DeletePopupVue
+        DashboardPopup
     }
 }
 </script>
