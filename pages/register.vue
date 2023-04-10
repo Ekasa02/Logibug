@@ -1,12 +1,14 @@
 <template>
-    <div class="h-screen flex">
-        <div class="w-2/5 px-[80px] py-[40px]">
-            <LogibugLogo />
-            <RegisterTitle />
-            <RegisterForm />
-            <RegisterTerms />
+    <div class="font-montserrat h-screen flex">
+        <div class="md:w-2/5 px-[30px] lg:px-[60px] flex items-center">
+            <div>
+                <LogibugLogo />
+                <RegisterTitle />
+                <RegisterForm />
+                <RegisterTerms />
+            </div>
         </div>
-        <div class="w-3/5 bg-blue-500"></div>
+        <div class="hidden md:block w-3/5 bg-blue-500"></div>
     </div>
 </template>
   

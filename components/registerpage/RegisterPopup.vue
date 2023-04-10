@@ -1,7 +1,7 @@
 <template>
     <div class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60">
         <div class="text-center bg-white w-[30%] rounded-2xl flex flex-col justify-center items-center py-[70px] relative">
-            <button class="absolute top-0 right-0 m-[32px]" @click="closeModal">
+            <button class="absolute top-0 right-0 m-[32px]" @click="$emit('close-modal')">
                 <img class="h-9 w-9" src="../icons/CloseCircle.svg" alt=" " style="filter: invert(28%) sepia(91%) saturate(3358%) hue-rotate(237deg) brightness(94%) contrast(99%)">
             </button>
             <img class="w-[50%] mb-8" src="../assets/RegisterImage.svg" alt="" />
