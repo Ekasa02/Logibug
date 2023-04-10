@@ -1,11 +1,11 @@
 <template>
     <div class="h-screen flex">
-      <div class="w-1/3 p-8">
+      <div class="w-2/5 px-[80px] py-[80px]">
         <LogibugLogo />
         <forgot-title/>
         <forgot-form />
       </div>
-      <div class="w-2/3 bg-blue-500"></div>
+      <div class="w-3/5 bg-blue-500"></div>
     </div>
   </template>
   
@@ -24,4 +24,12 @@
   }
   </script>
   
-  <style lang="scss" scoped></style>
+  <style >
+  .h-screen {
+    min-height: 100vh;
+  }
+  
+  .bg-blue-500 {
+    height: 100%;
+  }
+  </style>

@@ -1,6 +1,6 @@
 <template>
-    <div class="pt-[90px] justify-center items-center min-h-screen bg-[#EDF1FF]">
-      <div class="container grid grid-cols-4 ">
+    <div class="pt-[90px] pl-[90px] justify-center items-center min-h-screen bg-[#EDF1FF]">
+      <div class="container grid grid-cols-4 pl">
         <div>
           <sosial-media></sosial-media>
         </div>
