@@ -5,15 +5,20 @@
     </div>
     <div class="flex-1 flex align-items-center justify-end">
       <div class="mr-[70px] mt-[70px]">
-        <text-box></text-box>
+        <div  class="text-center font-[Montserrat]">
+          <div class="w-full h-full ">
+              <h1 class="text-2xl font-bold pb-[50px] ">Access Logibug anytime and <br/> anywhere</h1>
+              <p class="pl-[32px] pr-[32px] text-[20px]">Available in both web and mobile app versions, you can <br/> easily access LogiBug anytime, anywhere. Take full <br/> control of your testing project, monitor progress easily, <br/> and efficiently manage your team</p>
+          </div>
+      </div>
       </div>
       <div class="ml-[20px] ">
-        <img src="../assets/images/icon/Group 1.svg" alt="logo" class="object-cover" >
+        <img src="../assets/ContentImage1.svg" alt="logo" class="object-cover" >
       </div>
     </div>
     <div class="flex-1 flex align-items-center justify-end">
       <div class="pl-[3px] pr-[100px] pt-2 ">
-        <img src="../assets/images/icon/Group 2.svg" alt="logo" class="object-cover" >
+        <img src="../assets/ContentImage2.svg" alt="logo" class="object-cover" >
       </div>
       <div class="mr-[50px] mt-[70px] pt-[60px]">
         <div  class="text-center font-[Montserrat]">
@@ -34,7 +39,7 @@
       </div>
       </div>
       <div class="ml-[20px] mr-[100px] ">
-        <img src="../assets/images/icon/Group 3.svg" alt="logo" class="object-cover" >
+        <img src="../assets/ContentImage3.svg" alt="logo" class="object-cover" >
       </div>
     </div>
   </div>
@@ -45,12 +50,11 @@
 </template>
 
 <script>
-  import TextBox from '../components/landingpage/TextBox.vue';
-  import TextPage from '../components/landingpage/TextPage.vue';
+  
+  import TextPage from './TextPage.vue';
   
   export default {
     components: {
-      TextBox,
       TextPage,
     },
   };

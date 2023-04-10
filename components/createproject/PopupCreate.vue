@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import ButtonCancel from '../components/createproject/ButtonCancel.vue';
-import ButtonCreate from '../components/createproject/ButtonCreate.vue';
-import HeaderProject from '../components/createproject/HeaderProject.vue';
-import ProjectName from '../components/createproject/ProjectName.vue';
-import DescProject from '../components/createproject/DescProject.vue';
+import ButtonCancel from '../createproject/ButtonCancel.vue';
+import ButtonCreate from '../createproject/ButtonCreate.vue';
+import HeaderProject from '../createproject/HeaderProject.vue';
+import ProjectName from '../createproject/ProjectName.vue';
+import DescProject from '../createproject/DescProject.vue';
 
 export default {
     components:{

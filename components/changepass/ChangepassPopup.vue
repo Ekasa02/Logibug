@@ -1,17 +1,19 @@
 <template>
     <div>
         <div>
-            <email-forget></email-forget>
+            <change-success></change-success>
         </div>
     </div>
 </template>
 
 <script>
-import EmailForget from '../components/popup/EmailForget.vue'
+
+import ChangeSuccess from '../popup/ChangeSuccess.vue';
 
 export default {
     components:{
-        EmailForget
-    }
+    ChangeSuccess,
+    
+}
 }
 </script>

@@ -23,11 +23,11 @@
   </template>
   
   <script>
-  import SosialMedia from '../components/footer/SosialMedia.vue';
-  import CompanyFooter from '../components/footer/CompanyFooter.vue';
-  import ServiceFooter from '../components/footer/ServiceFooter.vue';
-  import ContactFooter from '../components/footer/ContactFooter.vue';
-  import MainFooter from '../components/footer/MainFooter.vue';
+  import SosialMedia from '../footer/SosialMedia.vue';
+  import CompanyFooter from '../footer/CompanyFooter.vue';
+  import ServiceFooter from '../footer/ServiceFooter.vue';
+  import ContactFooter from '../footer/ContactFooter.vue';
+  import MainFooter from '../footer/MainFooter.vue';
   
   export default {
     components:{
