@@ -1,22 +1,22 @@
 <template>
-    <div>
-        <div class="logo flex ml-1 pt-1">
-            <h1 class="text-[#333333] font-bold text-[20px] ml-[5px] pt-2 w-[180px] h-[50px]">Service</h1>
+    <div class="font-montserrat">
+        <div>
+            <h1 class="font-bold text-[20px] leading-[24px]">Services</h1>
         </div>
-        <div class="logo ml-2 pt-2">
-            <p class="text-[#333333] ml-[5px]  w-[180px] ">Manual Testing</p>
+        <div class="mt-[20px]">
+            <p class="font-medium leading-[24px]">Manual Testing</p>
         </div>
-        <div class="logo ml-2 pt-2">
-            <p class="text-[#333333] ml-[5px]  w-[180px] ">API Testing</p>
+        <div class="mt-[20px]">
+            <p class="font-medium leading-[24px]">API Testing</p>
         </div>
-        <div class="logo ml-2 pt-2">
-            <p class="text-[#333333] ml-[5px]  w-[180px] ">Testing Management</p>
+        <div class="mt-[20px]">
+            <p class="font-medium leading-[24px]">Testing Management</p>
         </div>
-        <div class="logo ml-2 pt-2">
-            <p class="text-[#333333] ml-[5px]  w-[180px] ">Test Plan</p>
+        <div class="mt-[20px]">
+            <p class="font-medium leading-[24px]">Test Plan</p>
         </div>
-        <div class="logo ml-2 pt-2">
-            <p class="text-[#333333] ml-[5px]  w-[180px] ">Bug Report</p>
+        <div class="mt-[20px]">
+            <p class="font-medium leading-[24px]">Bug Report</p>
         </div>
     </div>
 </template>

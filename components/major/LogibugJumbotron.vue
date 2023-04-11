@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center justify-center py-[100px]">
+    <div class="flex flex-col items-center justify-center py-[70px]">
         <HeroTitle />
         <HeroButton />
         <HeroImage />

@@ -1,10 +1,10 @@
 <template>
-  <div class="h-screen">
+  <div class="w-100% overflow-x-hidden">
     <LogibugNavbar />
     <LogibugTest />
-    <AboutPage/>
-    <version-page></version-page>
-    <footer-page></footer-page>
+    <AboutPage />
+    <VersionPage />
+    <FooterPage />
   </div>
 </template>
 
@@ -15,8 +15,6 @@ import AboutPage from '../components/landingpage/AboutPage.vue';
 import VersionPage from '../components/landingpage/VersionPage.vue';
 import FooterPage from '../components/landingpage/FooterPage.vue';
 
-
-
 export default {
   components: {
     LogibugNavbar,
@@ -24,7 +22,7 @@ export default {
     AboutPage,
     VersionPage,
     FooterPage
-}
+  }
 }
 </script>
 

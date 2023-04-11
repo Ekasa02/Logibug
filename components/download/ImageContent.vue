@@ -1,5 +1,6 @@
-<template>       
-    <div class="text-center ">
-      <p class=" font-[Montserrat]">Logibug web version is design to provide <br/> convenience, ease, and flexibility in performing <br/> application testing</p>
-    </div>     
-</template>
+<template>
+  <div class="text-center pt-[20px] md:min-h-[130px] lg:min-h-0">
+    <p class="font-montserrat px-[50px]">Logibug web version is design to provide convenience, ease, and flexibility in
+      performing application testing</p>
+  </div>
+</template> 
