@@ -1,5 +1,5 @@
-<template>       
-          <div class="text-center ">
-            <h1 class="text-2xl font-bold font-[Montserrat]">LogiBug is equipped with many features that will <br/> help streamline your testing process</h1>
-          </div>     
+<template>
+  <div class="text-center w-[100%]">
+    <h1 class="text-3xl font-bold font-montserrat">LogiBug is available in two product versions</h1>
+  </div>
 </template>
