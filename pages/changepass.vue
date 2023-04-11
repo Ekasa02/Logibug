@@ -1,11 +1,16 @@
 <template>
     <div class="h-screen flex">
-      <div class="w-2/5 px-20 py-20">
-        <LogibugLogo />
-        <changepass-title/>
-        <changepass-form/>
+      <div class="md:w-2/5 px-[30px] py-[30px] lg:px-[60px] flex items-center justify-items-center">
+        <div class="margin-x-auto">
+          <LogibugLogo />
+          <changepass-title/>
+          <changepass-form/>
+        </div>
       </div>
-      <div class="w-3/5 bg-blue-500"></div>
+      <div class="hidden md:block w-3/5 bg-blue-500">
+      <img src="../components/assets/FrameForm.svg" alt="Image" class="object-cover w-full h-full">
+
+      </div>
     </div>
   </template>
   

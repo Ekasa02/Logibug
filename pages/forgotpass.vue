@@ -5,7 +5,10 @@
         <forgot-title/>
         <forgot-form />
       </div>
-      <div class="w-3/5 bg-blue-500"></div>
+      <div class="w-3/5 bg-blue-500">
+      <img src="../components/assets/FrameForm.svg" alt="Image" class="object-cover w-full h-full">
+
+      </div>
     </div>
   </template>
   
