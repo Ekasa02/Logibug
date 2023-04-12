@@ -1,7 +1,7 @@
 <template>
   <div class="w-100% overflow-x-hidden">
     <LogibugNavbar />
-    <LogibugTest />
+    <LogibugHero />
     <AboutPage />
     <VersionPage />
     <FooterPage />
@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import LogibugNavbar from '../components/major/LogibugNavbar.vue';
-import LogibugTest from '../components/major/LogibugJumbotron.vue';
-import AboutPage from '../components/landingpage/AboutPage.vue';
-import VersionPage from '../components/landingpage/VersionPage.vue';
-import FooterPage from '../components/landingpage/FooterPage.vue';
+import LogibugNavbar from '../components/landingpage/LogibugNavbar.vue';
+import LogibugHero from '../components/landingpage/LogibugJumbotron.vue';
+import AboutPage from '../components/landingpage/LogibugAbout.vue';
+import VersionPage from '../components/landingpage/LogibugVersion.vue';
+import FooterPage from '../components/landingpage/LogibugFooter.vue';
 
 export default {
   components: {
     LogibugNavbar,
-    LogibugTest,
+    LogibugHero,
     AboutPage,
     VersionPage,
     FooterPage

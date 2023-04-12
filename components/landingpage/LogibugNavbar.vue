@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import NavbarList from '../navbar/NavbarList.vue';
-import NavbarLogin from '../navbar/NavbarLogin.vue';
-import NavbarRegister from '../navbar/NavbarRegister.vue';
 import LogibugLogo from '../major/LogibugLogo.vue';
+import NavbarList from './navbar/NavbarList.vue';
+import NavbarLogin from './navbar/NavbarLogin.vue';
+import NavbarRegister from './navbar/NavbarRegister.vue';
 
 export default {
     components: { LogibugLogo, NavbarList, NavbarLogin, NavbarRegister }
