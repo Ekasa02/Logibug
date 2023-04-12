@@ -27,7 +27,7 @@
                 class="px-4 py-2 border border-solid border-gray-300" :disabled="currentPage === 1"
                 @click="currentPage--">
                 <img
-                    src="./Icons/Previous.svg" alt="Next" height="14px" width="8px"
+                    src="./svg/Previous.svg" alt="Next" height="14px" width="8px"
                     :style="{ filter: currentPage === lastPage ? 'invert(98%) sepia(1%) saturate(1149%) hue-rotate(252deg) brightness(114%) contrast(70%)' : '' }">
             </button>
             <div class="px-4 py-2 bg-white border border-solid border-gray-300 mx-[10px]">{{ currentPage }}</div>
@@ -35,7 +35,7 @@
                 class="px-4 py-2 border border-solid border-gray-300" :disabled="currentPage === lastPage"
                 @click="currentPage++">
                 <img
-                    src="./Icons/Next.svg" alt="Next" height="14px" width="8px"
+                    src="./svg/Next.svg" alt="Next" height="14px" width="8px"
                     :style="{ filter: currentPage === lastPage ? 'invert(98%) sepia(1%) saturate(1149%) hue-rotate(252deg) brightness(114%) contrast(70%)' : '' }">
             </button>
         </div>

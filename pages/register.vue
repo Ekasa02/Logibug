@@ -17,9 +17,9 @@
 <script>
 
 import LogibugLogo from '../components/major/LogibugLogo.vue';
-import RegisterForm from '../components/registerpage/RegisterForm.vue';
-import RegisterTitle from '../components/registerpage/RegisterTitle.vue';
-import RegisterTerms from '../components/registerpage/RegisterTerms.vue';
+import RegisterForm from '../components/loginform/registerpage/RegisterForm.vue';
+import RegisterTitle from '../components/loginform/registerpage/RegisterTitle.vue';
+import RegisterTerms from '../components/loginform/registerpage/RegisterTerms.vue';
 
 export default {
     components: {

@@ -13,9 +13,9 @@
   </div>
 </template>
   
-<script>
-import LoginTitle from '../components/loginpage/LoginTitle.vue';
-import LoginForm from '../components/loginpage/LoginForm.vue';
+<script>  
+import LoginTitle from '../components/loginform/loginpage/LoginTitle.vue';
+import LoginForm from '../components/loginform/loginpage/LoginForm.vue';
 import LogibugLogo from '../components/major/LogibugLogo.vue';
 
 export default {
