@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import HeroTitle from '../hero/HeroTitle.vue';
-import HeroButton from '../hero/HeroButton.vue';
-import HeroImage from '../hero/HeroImage.vue';
+import HeroTitle from './hero/HeroTitle.vue';
+import HeroButton from './hero/HeroButton.vue';
+import HeroImage from './hero/HeroImage.vue';
 
 export default {
     components: { HeroTitle, HeroButton, HeroImage }
