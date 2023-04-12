@@ -17,7 +17,7 @@
 import NavbarList from '../navbar/NavbarList.vue';
 import NavbarLogin from '../navbar/NavbarLogin.vue';
 import NavbarRegister from '../navbar/NavbarRegister.vue';
-import LogibugLogo from './LogibugLogo.vue';
+import LogibugLogo from '../major/LogibugLogo.vue';
 
 export default {
     components: { LogibugLogo, NavbarList, NavbarLogin, NavbarRegister }
