@@ -9,8 +9,8 @@
                 <p class="text-center pt-7 font-['Montserrat'] text-[20px]">Are you sure to delete project</p>
                 <h1 class="text-center font-['Montserrat'] font-bold">Project</h1>
             </div>
-            <div class="flex pt-[30px] justify-between ">
-                <button-cancel class="ml-auto mr-[15px]"></button-cancel>
+            <div class="flex pt-[30px] justify-center items-center ">
+                <button-cancel class=" mr-[19px]"></button-cancel>
                 <button-delete></button-delete>
             </div>
         </div>
