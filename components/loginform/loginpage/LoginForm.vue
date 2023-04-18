@@ -1,8 +1,8 @@
 <template>
     <div class="mt-[30px]">
-        <form class="max-w-md" @submit.prevent="login">
+        <v-form class="max-w-md" @submit.prevent="login">
             <div class="relative mb-4">
-                <input id="email" v-model="email" type="email"
+                <input id="email" v-model="userInfo.email" type="email"
                     class="block px-12 py-2 w-full text-gray-900 bg-transparent rounded-lg border border-solid border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" " />
                 <label for="email"
@@ -10,7 +10,7 @@
                 <img src="../svg/Mail.svg" alt="Mail Icon" class="absolute left-3 top-2.5 h-5 w-5">
             </div>
             <div class="mb-4 relative">
-                <input id="password" v-model="password" :type="showPassword ? 'text' : 'password'"
+                <input id="password" v-model="userInfo.password" :type="showPassword ? 'text' : 'password'"
                     class="block px-12 py-2 w-full text-gray-900 bg-transparent rounded-lg border border-solid border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" " />
                 <label for="password"
@@ -20,12 +20,12 @@
                     class="absolute right-3 top-2.5 h-5 w-5 cursor-pointer" @click="showPassword = !showPassword" />
             </div>
             <div class="mb-6">
-                <button type="submit"
-                    class="w-full py-[10px] bg-[#554AF0] text-white rounded-[8px] text-md hover:bg-blue-600">
+                <button class="w-full py-[10px] bg-[#554AF0] text-white rounded-[8px] text-md hover:bg-blue-600"
+                    @click="submitForm(userInfo)">
                     Log in
                 </button>
             </div>
-        </form>
+        </v-form>
         <div class="text-center text-sm">
             <p class="text-[#333333]">
                 Don't have an account?
@@ -39,12 +39,15 @@
   
 <script>
 export default {
+    props: ["submitForm"],
     data() {
         return {
-            email: '',
-            password: '',
-            showPassword: false
-        }
+            userInfo: {
+                email: "varick@gmail.com",
+                password: "ahahahah",
+            },
+            showPassword: false,
+        };
     },
     methods: {
         login() {

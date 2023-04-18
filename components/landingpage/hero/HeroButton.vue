@@ -1,11 +1,11 @@
 <template>
     <div class="flex justify-center items-center mt-[60px]">
-        <button class="bg-[#554AF0] text-white text-[20px] leading-[30px] font-bold py-[15px] px-[64px] rounded-xl">
+        <nuxt-link to="/register"
+            class="bg-[#554AF0] text-white text-[20px] leading-[30px] font-bold py-[15px] px-[64px] rounded-xl">
             Testing Now
-        </button>
+        </nuxt-link>
     </div>
 </template>
-  
 
 <script>
 export default {
