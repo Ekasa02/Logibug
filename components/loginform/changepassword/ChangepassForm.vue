@@ -19,54 +19,31 @@
         </p>
       </div>
       <div class="relative mb-5">
-<<<<<<< HEAD
-        <input
-          id="password"
-          v-model="confirmPassword"
-          :type="showConfirmPassword ? 'text' : 'password'"
-          :class="[
-            'block px-12 py-2 w-full text-gray-900 bg-transparent rounded-lg border border-solid',
-            isInvalidConfirmPassword ? 'border-red-500' : 'border-gray-300',
-            'appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer',
-          ]"
-          placeholder="Confirm New Password"
-          @blur="confirmPasswordTouched = true"
-        />
-        <label
-          for="confirmPassword"
-          class="absolute text-[#4D4D4D] font-medium duration-300 transform -translate-y-4 scale-75 top-2 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:-top-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:scale-75 peer-focus:-translate-y-2 left-10"
-          ></label
-        >
-        <img
-          src="../icons/Password.svg"
-          alt="Lock Icon"
-          class="absolute left-3 top-2.5 h-5 w-5"
-        />
-        <img
-          src="../icons/ShowPassword.svg"
-          alt="Show Password Icons"
-          class="absolute right-3 top-2.5 h-5 w-5 cursor-pointer"
-          @click="showConfirmPassword = !showConfirmPassword"
-        />
-        <p
-          v-if="confirmPasswordTouched && confirmPassword !== password"
-          class="text-red-500 text-sm mt-1"
-        >
-=======
         <input id="password" v-model="confirmPassword" :type="showConfirmPassword ? 'text' : 'password'" :class="[
           'block px-12 py-2 w-full text-gray-900 bg-transparent rounded-lg border border-solid',
           isInvalidConfirmPassword ? 'border-red-500' : 'border-gray-300',
           'appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer',
         ]" placeholder="Confirm New Password" @blur="confirmPasswordTouched = true" />
         <label for="confirmPassword"
-          class="absolute text-[#4D4D4D] font-medium duration-300 transform -translate-y-4 scale-75 top-2 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:-top-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:scale-75 peer-focus:-translate-y-2 left-10">Confirm
-          New Password</label>
+          class="absolute text-[#4D4D4D] font-medium duration-300 transform -translate-y-4 scale-75 top-2 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:-top-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:scale-75 peer-focus:-translate-y-2 left-10"></label>
         <img src="../svg/Password.svg" alt="Lock Icon" class="absolute left-3 top-2.5 h-5 w-5" />
         <img src="../svg/ShowPassword.svg" alt="Show Password Icons"
           class="absolute right-3 top-2.5 h-5 w-5 cursor-pointer" @click="showConfirmPassword = !showConfirmPassword" />
         <p v-if="confirmPasswordTouched && confirmPassword !== password" class="text-red-500 text-sm mt-1">
->>>>>>> 8a085188e240e5e8b45aa4bbb78ac6c14ca4cb6d
+          <input id="password" v-model="confirmPassword" :type="showConfirmPassword ? 'text' : 'password'" :class="[
+            'block px-12 py-2 w-full text-gray-900 bg-transparent rounded-lg border border-solid',
+            isInvalidConfirmPassword ? 'border-red-500' : 'border-gray-300',
+            'appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer',
+          ]" placeholder="Confirm New Password" @blur="confirmPasswordTouched = true" />
+          <label for="confirmPassword"
+            class="absolute text-[#4D4D4D] font-medium duration-300 transform -translate-y-4 scale-75 top-2 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:-top-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:scale-75 peer-focus:-translate-y-2 left-10">Confirm
+            New Password</label>
+          <img src="../svg/Password.svg" alt="Lock Icon" class="absolute left-3 top-2.5 h-5 w-5" />
+          <img src="../svg/ShowPassword.svg" alt="Show Password Icons"
+            class="absolute right-3 top-2.5 h-5 w-5 cursor-pointer" @click="showConfirmPassword = !showConfirmPassword" />
+        <p v-if="confirmPasswordTouched && confirmPassword !== password" class="text-red-500 text-sm mt-1">
           The password you entered does not match.
+        </p>
         </p>
       </div>
       <div class="mb-6 pt-6">

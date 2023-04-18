@@ -4,7 +4,7 @@
       <div class="margin-x-auto">
         <LogibugLogo />
         <LoginTitle />
-        <LoginForm />
+        <LoginForm :submitForm="loginUser" />
       </div>
     </div>
     <div class="hidden md:block w-3/5 bg-blue-500">
@@ -13,7 +13,7 @@
   </div>
 </template>
   
-<script>  
+<script>
 import LoginTitle from '../components/loginform/loginpage/LoginTitle.vue';
 import LoginForm from '../components/loginform/loginpage/LoginForm.vue';
 import LogibugLogo from '../components/major/LogibugLogo.vue';
@@ -23,6 +23,14 @@ export default {
     LogibugLogo,
     LoginTitle,
     LoginForm,
+  },
+  methods: {
+    loginUser(loginInfo) {
+      this.$auth.loginwith('local', {
+        data: loginInfo
+      })
+      alert('You pressed a button!')
+    }
   }
 }
 </script>

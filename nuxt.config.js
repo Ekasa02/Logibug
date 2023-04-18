@@ -18,11 +18,11 @@ export default {
   css: [
     '@/assets/css/main.css',
   ],
-  ssr:false,
+  ssr: false,
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    
-    
+
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,15 +32,42 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
+  ],
+
+  axios: {
+    baseURL: 'https://logibug.fly.dev/api/v1'
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          register: { url: '/users', method: 'post' },
+          login: { url: '/login', method: 'post', propertyName: 'jwt' },
+          logout: { url: '/logout', method: 'post' },
+          activation: { url: '/user/user', method: 'get', propertyName: 'data' },
+        },
+        token: {
+          property: 'jwt'
+        },
+        user: {
+          property: false,
+          autoFetch: true // default
+        }
+      },
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-     postcss: {
+    postcss: {
       postcssOptions: {
         plugins: {
           tailwindcss: {},
