@@ -1,14 +1,16 @@
 <template>
-    <dashboard-popup></dashboard-popup>
+    <div>
+        <popup-edit></popup-edit>
+    </div>
 </template>
 
 <script>
-import DashboardPopup from "../components/dashboard/DashboardPopup.vue";
+import PopupEdit from "../components/projectedit/editproject/PopupEdit.vue"
 
 
-export default {
+export default{
     components:{
-        DashboardPopup
+        PopupEdit
     }
 }
 </script>

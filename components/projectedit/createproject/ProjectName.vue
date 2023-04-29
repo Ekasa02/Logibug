@@ -1,11 +1,11 @@
 <template>
-    <div class="pt-[30px]">
-      <label class="block font-['Montserrat'] font-bold text-[18px] mb-2" for="project-name">
+    <div >
+      <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="project-name">
         Project Name
       </label>
       <input
-        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="project-name"
+        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="text"
         placeholder="Project Name"
       >
