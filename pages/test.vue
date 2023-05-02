@@ -1,16 +1,16 @@
 <template>
     <div>
-        <popup-invite></popup-invite>
+        <detail-profile></detail-profile>
     </div>
 </template>
 
 <script>
-import PopupInvite from "../components/projectedit/invitemember/PopupInvite.vue";
+import DetailProfile from "../components/profil/DetailProfile.vue";
 
 
 export default{
     components:{
-        PopupInvite,
+        DetailProfile,
     }
 }
 </script>

@@ -38,7 +38,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth',
+    '@nuxtjs/auth-next',
   ],
 
   axios: {
@@ -50,12 +50,12 @@ export default {
       local: {
         endpoints: {
           register: { url: '/users', method: 'post' },
-          login: { url: '/login', method: 'post', propertyName: 'jwt' },
-          logout: { url: '/logout', method: 'post' },
-          activation: { url: '/user/user', method: 'get', propertyName: 'data' },
+          login: { url: '/login', method: 'post' },
+          logout: false,
+         
         },
         token: {
-          property: 'jwt'
+          property: 'token'
         },
         user: {
           property: false,
@@ -76,4 +76,8 @@ export default {
       },
     },
   },
+  // router: {
+  //   middleware: ['auth']
+  // }
 }
+
