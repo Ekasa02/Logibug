@@ -50,17 +50,12 @@ export default {
       local: {
         endpoints: {
           register: { url: '/users', method: 'post' },
-          login: { url: '/login', method: 'post', propertyName: 'jwt' },
+          login: { url: '/login', method: 'post', propertyName: 'token' },
           logout: { url: '/logout', method: 'post' },
           activation: { url: '/user/user', method: 'get', propertyName: 'data' },
+          getalluser: { url: '/users?q=ash', method: 'get', propertyName: 'user'}
         },
-        token: {
-          property: 'jwt'
-        },
-        user: {
-          property: false,
-          autoFetch: true // default
-        }
+        tokenType: ''
       },
     }
   },

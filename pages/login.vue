@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     loginUser(loginInfo) {
-      this.$auth.loginwith('local', {
+      this.$auth.loginWith('local', {
         data: loginInfo
       })
       alert('You pressed a button!')
