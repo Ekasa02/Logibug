@@ -2,7 +2,7 @@
   <div
     class="bg-[#33333385] fixed top-16  right-0 transform -translate-x-28"
   >
-    <div class="w-450px h-540px">
+    <div >
       <div class="bg-white rounded-lg shadow-lg">
         <header-account></header-account>
         <div class="pl-5">
