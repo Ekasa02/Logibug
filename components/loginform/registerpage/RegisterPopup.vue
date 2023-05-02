@@ -4,7 +4,7 @@
             <button class="absolute top-0 right-0 m-[32px]" @click="$emit('close-modal')">
                 <img class="h-9 w-9" src="../svg/CloseCircle.svg" alt=" " style="filter: invert(28%) sepia(91%) saturate(3358%) hue-rotate(237deg) brightness(94%) contrast(99%)">
             </button>
-            <img class="w-[50%] mb-8" src="" alt="" />
+            <img class="w-[50%] mb-8" src="../popup/svg/Group 64.svg" alt="Images" />
             <h1 class="font-semibold text-[24px] leading-7 mb-2 text-[#1A1A1A]">Congratulations!</h1>
             <p class="font-medium text-[#1A1A1A] text-[20px] leading-7">Register Success</p>
         </div>

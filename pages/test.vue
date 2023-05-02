@@ -1,16 +1,16 @@
 <template>
     <div>
-        <popup-edit></popup-edit>
+        <popup-invite></popup-invite>
     </div>
 </template>
 
 <script>
-import PopupEdit from "../components/projectedit/editproject/PopupEdit.vue"
+import PopupInvite from "../components/projectedit/invitemember/PopupInvite.vue";
 
 
 export default{
     components:{
-        PopupEdit
+        PopupInvite,
     }
 }
 </script>
