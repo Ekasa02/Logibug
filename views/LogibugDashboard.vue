@@ -10,7 +10,9 @@
                 <DashboardButton />
             </div>
         </div>
-        <DashboardTable :projects="projects" />
+        <div style="padding: 20px 100px;">
+            <DashboardTable />
+        </div>
     </div>
 </template>
 

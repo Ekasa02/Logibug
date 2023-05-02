@@ -35,7 +35,7 @@ import TestingType from '../createproject/TestingType.vue';
 import DropPlatform from '../createproject/DropPlatform.vue';
 
 export default {
-    components:{
+    components: {
         ButtonCancel,
         ButtonCreate,
         HeaderProject,
