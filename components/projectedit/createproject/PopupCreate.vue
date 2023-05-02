@@ -14,7 +14,7 @@
                 <button-cancel class="ml-auto mr-[15px]"></button-cancel>
                 <button-create></button-create>
             </div>
-            
+
         </div>
     </div>
 </template>
@@ -27,7 +27,7 @@ import ProjectName from '../createproject/ProjectName.vue';
 import DescProject from '../createproject/DescProject.vue';
 
 export default {
-    components:{
+    components: {
         ButtonCancel,
         ButtonCreate,
         HeaderProject,
