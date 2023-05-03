@@ -1,16 +1,16 @@
 <template>
     <div>
-        <detail-profile></detail-profile>
+        <popup-addversi></popup-addversi>
     </div>
 </template>
 
 <script>
-import DetailProfile from "../components/profil/DetailProfile.vue";
+import PopupAddversi from "../components/version/PopupAddversi.vue";
 
 
 export default{
     components:{
-        DetailProfile,
+        PopupAddversi,
     }
 }
 </script>
