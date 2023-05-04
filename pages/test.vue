@@ -1,16 +1,16 @@
 <template>
     <div>
-        <popup-edit></popup-edit>
+        <popup-testcase></popup-testcase>
     </div>
 </template>
 
 <script>
-import PopupEdit from "../components/projectedit/invitemember/editmember/PopupEdit.vue";
+import PopupTestcase from "../components/projectedit/testcase/PopupTestcase.vue";
 
 
 export default{
     components:{
-        PopupEdit,
+        PopupTestcase,
     }
 }
 </script>
