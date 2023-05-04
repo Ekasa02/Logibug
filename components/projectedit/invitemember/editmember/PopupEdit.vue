@@ -6,7 +6,9 @@
           <div class="pl-5 pr-5">
             <email-member></email-member>
             <role-member></role-member>
-            <button-save></button-save>
+            <div class="pt-9 pb-16">
+                <button-save ></button-save>
+            </div>
           </div>
         </div>
       </div>
