@@ -1,16 +1,16 @@
 <template>
     <div>
-        <popup-addversi></popup-addversi>
+        <popup-edit></popup-edit>
     </div>
 </template>
 
 <script>
-import PopupAddversi from "../components/version/PopupAddversi.vue";
+import PopupEdit from "../components/projectedit/invitemember/editmember/PopupEdit.vue";
 
 
 export default{
     components:{
-        PopupAddversi,
+        PopupEdit,
     }
 }
 </script>
