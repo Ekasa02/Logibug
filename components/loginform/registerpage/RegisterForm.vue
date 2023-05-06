@@ -1,6 +1,6 @@
 <template>
   <div class="mt-[30px]">
-    <form class="mx-auto" @submit.prevent="registerPopup = true" @close-modal="registerPopup = false">
+    <form class="mx-auto" @submit.prevent="register" @close-modal="registerPopup = false">
       <div class="relative mb-4">
         <input id="name" v-model="name" type="text"
           class="block px-12 py-2 w-full text-gray-900 bg-transparent rounded-lg border border-solid border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -61,7 +61,7 @@
         </button>
       </div>
     </form>
-    <RegisterPopup v-if="registerPopup" />
+    <RegisterPopup v-if="registerPopup" @close="closePopup"/>
     <div class="text-center text-sm">
       <p class="text-[#333333]">
         Already have an account?
@@ -115,6 +115,23 @@ export default {
         this.emailErrorMessage = ''
       }
     },
+    async register() {
+      try {
+        const response = await this.$axios.$post('/users', {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.confirmPassword
+        });
+        console.log(response.data);
+        this.registerPopup = true;
+        // Success, redirect to dashboard or home page
+      } catch (error) {
+        console.error(error);
+        // Display error message to user
+      }
+    }
+
   },
 }
 </script>

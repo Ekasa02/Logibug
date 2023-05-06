@@ -1,6 +1,6 @@
 <template>
     <div class="mt-[30px]">
-        <v-form class="max-w-md" @submit.prevent="login">
+        <form class="max-w-md" @submit.prevent="userLogin">
             <div class="relative mb-4">
                 <input id="email" v-model="userInfo.email" type="email"
                     class="block px-12 py-2 w-full text-gray-900 bg-transparent rounded-lg border border-solid border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -21,11 +21,11 @@
             </div>
             <div class="mb-6">
                 <button class="w-full py-[10px] bg-[#554AF0] text-white rounded-[8px] text-md hover:bg-blue-600"
-                    @click="submitForm(userInfo)">
+                    type="submit">
                     Log in
                 </button>
             </div>
-        </v-form>
+        </form>
         <div class="text-center text-sm">
             <p class="text-[#333333]">
                 Don't have an account?
@@ -39,19 +39,23 @@
   
 <script>
 export default {
-    props: ["submitForm"],
     data() {
         return {
             userInfo: {
-                email: "varick@gmail.com",
-                password: "ahahahah",
-            },
+                email: "asharimidana1@gmail.com",
+                password: "12345678",
+            },  
             showPassword: false,
         };
     },
     methods: {
-        login() {
-            this.$router.push('/dashboard')
+        async userLogin() {
+            try {
+                const response = await this.$auth.loginWith('local', { data: this.userInfo })
+                console.log(response)
+            } catch (err) {
+                console.log(err)
+            }
         }
     }
 }

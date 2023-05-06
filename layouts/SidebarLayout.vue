@@ -42,7 +42,8 @@
             </div>
         </div>
         <div :class="{ 'w-full': !showLabels, 'w-4/5': showLabels }" class="h-screen bg-gray-100">
-            <component :is="currentRouteComponent" />
+            <!-- <component :is="currentRouteComponent" /> -->
+            <Nuxt/>
         </div>
     </div>
 </template>  
