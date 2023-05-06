@@ -42,20 +42,27 @@ export default {
   ],
 
   axios: {
-    baseURL: 'https://logibug.fly.dev/api/v1'
+    baseURL: 'https://logibugv2.fly.dev/api/v1'
   },
 
   auth: {
     strategies: {
       local: {
+        redirect: {
+          login: '/dashboard',
+          logout: '/',
+          callback: '/login',
+          home: '/'
+        },
         endpoints: {
           register: { url: '/users', method: 'post' },
           login: { url: '/login', method: 'post' },
+          user: { url: '/profiles', method: 'get' },
           logout: false,
-         
+          
         },
         token: {
-          property: 'token'
+          property: 'access_token'
         },
         user: {
           property: false,
@@ -76,8 +83,8 @@ export default {
       },
     },
   },
-  // router: {
-  //   middleware: ['auth']
-  // }
+  router: {
+    middleware: ['auth']
+  }
 }
 

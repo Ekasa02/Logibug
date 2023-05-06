@@ -27,7 +27,8 @@ export default {
         RegisterForm,
         RegisterTitle,
         RegisterTerms
-    }
+    },
+    auth : false
 }
 </script>
   

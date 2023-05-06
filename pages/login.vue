@@ -24,6 +24,7 @@ export default {
     LoginTitle,
     LoginForm,
   },
+  auth : false,
   methods: {
     loginUser(loginInfo) {
       this.$auth.loginWith('local', {

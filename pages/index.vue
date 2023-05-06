@@ -22,7 +22,8 @@ export default {
     AboutPage,
     VersionPage,
     FooterPage
-  }
+  },
+  auth : false,
 }
 </script>
 
