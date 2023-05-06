@@ -5,7 +5,10 @@
         <!-- <popup-member></popup-member> -->
         <!-- <popup-addresult></popup-addresult> -->
         <!-- <popup-create></popup-create> -->
-        <popup-edit></popup-edit>
+        <!-- <popup-edit></popup-edit> -->
+        <!-- <popupedit-test></popupedit-test> -->
+        <!-- <popup-deletetest></popup-deletetest> -->
+        <popup-filter></popup-filter>
     </div>
 </template>
 
@@ -16,7 +19,10 @@
 // import PopupMember from '../components/projectedit/invitemember/member/PopupMember.vue';
 // import PopupAddresult from '../components/projectedit/testcase/addresult/PopupAddresult.vue';
 // import PopupCreate from '../components/projectedit/createproject/PopupCreate.vue';
-import PopupEdit from '../components/projectedit/editproject/PopupEdit.vue';
+// import PopupEdit from '../components/projectedit/editproject/PopupEdit.vue';
+// import PopupeditTest from '../components/projectedit/testcase/edittestcase/PopupeditTest.vue';
+// import PopupDeletetest from '../components/projectedit/testcase/popupdeletetestcase/PopupDeletetest.vue';
+import PopupFilter from '../components/projectedit/testcase/filtertestase/PopupFilter.vue';
 
 
 export default{
@@ -26,7 +32,10 @@ export default{
         // PopupMember,
         // PopupAddresult,
         // PopupCreate,
-        PopupEdit,
+        // PopupEdit,
+        // PopupeditTest,
+        // PopupDeletetest,
+        PopupFilter,
     }
 }
 </script>
