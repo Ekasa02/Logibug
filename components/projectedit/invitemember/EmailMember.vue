@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-8">
+    <div class="pt-6">
       <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="email-member">
         Email
       </label>
