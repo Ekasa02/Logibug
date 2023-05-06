@@ -13,7 +13,7 @@
         </div>
         <div class="flex pt-[60px] justify-between pr-5 pb-6">
           <button-cancel class="ml-auto mr-[15px]"></button-cancel>
-          <button-create></button-create>
+          <button-save></button-save>
         </div>
       </div>
     </div>
@@ -22,17 +22,17 @@
 
 <script>
 import ButtonCancel from '../createproject/ButtonCancel.vue'
-import ButtonCreate from '../editproject/ButtonCreate.vue'
 import HeaderProject from '../editproject/HeaderProject.vue'
 import ProjectName from '../createproject/ProjectName.vue'
 // import DescProject from '../createproject/DescProject.vue'
 import TestingType from '../createproject/TestingType.vue'
 import DropPlatform from '../createproject/DropPlatform.vue'
+import ButtonSave from './ButtonSave.vue'
 
 export default {
   components: {
     ButtonCancel,
-    ButtonCreate,
+    ButtonSave,
     HeaderProject,
     ProjectName,
     // DescProject,
