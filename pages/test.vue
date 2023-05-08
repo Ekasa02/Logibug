@@ -8,7 +8,7 @@
         <!-- <popup-edit></popup-edit> -->
         <!-- <popupedit-test></popupedit-test> -->
         <!-- <popup-deletetest></popup-deletetest> -->
-        <popup-filter></popup-filter>
+        <!-- <popup-filter></popup-filter> -->
     </div>
 </template>
 
@@ -22,7 +22,7 @@
 // import PopupEdit from '../components/projectedit/editproject/PopupEdit.vue';
 // import PopupeditTest from '../components/projectedit/testcase/edittestcase/PopupeditTest.vue';
 // import PopupDeletetest from '../components/projectedit/testcase/popupdeletetestcase/PopupDeletetest.vue';
-import PopupFilter from '../components/projectedit/testcase/filtertestase/PopupFilter.vue';
+// import PopupFilter from '../components/projectedit/testcase/filtertestase/PopupFilter.vue';
 
 
 export default{
@@ -35,7 +35,7 @@ export default{
         // PopupEdit,
         // PopupeditTest,
         // PopupDeletetest,
-        PopupFilter,
+        // PopupFilter,
     }
 }
 </script>
