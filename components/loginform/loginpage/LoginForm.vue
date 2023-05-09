@@ -53,6 +53,7 @@ export default {
             try {
                 const response = await this.$auth.loginWith('local', { data: this.userInfo })
                 console.log(response)
+                this.$router.push('/dashboard')
             } catch (err) {
                 console.log(err)
             }
