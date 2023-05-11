@@ -2,10 +2,10 @@
     <div>
         <div class="flex items-center justify-end py-[14px] pr-[100px] border-b-[1px] border-gray-300">
             <div @click="handleProfileClick" class="ml-auto">
-                <LogibugProfile :showPopup="showPopup" @click="showPopup = true" />
+                <LogibugProfile :Popup="isPopupVisible" @click="isPopupVisible = true" />
             </div>
         </div>
-        <DashboardPopup v-if="showPopup" @close="showPopup = false"/>
+        <DashboardPopup v-if="Popup" @close="Popup = false"/>
     </div>
 </template>
   
@@ -17,7 +17,7 @@ export default {
     components: { LogibugProfile, DashboardPopup },
     data() {
         return {
-            showPopup: false
+            isPopupVisible: this.Popup
         }
     },
     props:{
