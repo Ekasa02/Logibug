@@ -13,12 +13,6 @@
         <input id="project-name" v-model="newItem.name"
           class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="text" placeholder="Project Name" required>
-        <label class="block text-gray-700 text-[14px] font-bold mb-2" for="description">
-          Description
-        </label>
-        <textarea id="description" v-model="newItem.description"
-          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          placeholder="Description your project" required></textarea>
         <div class="pt-[15px] relative">
           <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="platform">
             Platform
@@ -62,20 +56,20 @@
       </form>
       <div class="flex pt-[70px] justify-between sm:pt-14">
         <button-cancel class="ml-auto mr-[15px]"></button-cancel>
-        <!-- <button-create></button-create> -->
+        <button-create></button-create>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonCancel from "../createproject/ButtonCancel.vue";
-// import ButtonCreate from "../editproject/ButtonCreate.vue";
+import ButtonCancel from "./ButtonCancel.vue";
+import ButtonCreate from "./ButtonCreate.vue";
 
 export default {
   components: {
     ButtonCancel,
-    // ButtonCreate,
+    ButtonCreate,
   },
   emits: ['submit'],
   data() {

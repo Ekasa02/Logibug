@@ -1,6 +1,6 @@
 <template>
-    <div class="h-[400px] w-[70%] mt-[20px] bg-cover bg-center bg-blue-500 ml-28 hidden md:block">
-        <!-- <img src="../../assets/Landingpage.svg"/> -->
+    <div class="h-[400px] w-[70%] mt-[20px] bg-cover bg-center ml-28 hidden md:block">
+        <img src="../../assets/Landingpage.svg"/>
     </div>
 </template>
 
