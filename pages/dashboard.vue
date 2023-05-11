@@ -53,6 +53,7 @@ export default {
         }
     },
     methods: {
+        
         showPopup() {
             this.isPopupVisible = true;
         },

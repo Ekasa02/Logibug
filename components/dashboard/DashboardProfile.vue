@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="flex items-center justify-end py-[14px] pr-[100px] border-b-[1px] border-gray-300">
-            <div class="ml-auto">
-                <LogibugProfile @click="showPopup = true" />
+            <div @click="handleProfileClick" class="ml-auto">
+                <LogibugProfile :showPopup="showPopup" @click="showPopup = true" />
             </div>
         </div>
         <DashboardPopup v-if="showPopup" @close="showPopup = false"/>
@@ -18,6 +18,17 @@ export default {
     data() {
         return {
             showPopup: false
+        }
+    },
+    props:{
+        showPopup:{
+            type: Boolean,
+            required: true
+        }
+    },
+    methods:{
+        handleProfileClick(){
+            this.$emit('click');
         }
     }
 }

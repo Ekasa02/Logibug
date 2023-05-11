@@ -52,7 +52,7 @@
             </div>
           </div>
         </div>
-        <button type="submit">Add Item</button>
+        <!-- <button type="submit">Add Item</button> -->
       </form>
       <div class="flex pt-[70px] justify-between sm:pt-14">
         <button-cancel class="ml-auto mr-[15px]"></button-cancel>
