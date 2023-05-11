@@ -42,8 +42,8 @@ export default {
     data() {
         return {
             userInfo: {
-                email: "asharimidana1@gmail.com",
-                password: "12345678",
+                email: "",
+                password: "",
             },  
             showPassword: false,
         };
