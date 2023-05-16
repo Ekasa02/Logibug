@@ -1,12 +1,18 @@
 <template>
-    <div class="rounded-full overflow-hidden">
-        <img class="w-12 h-12 object-cover" src="./svgs/User.svg" alt="Profile Picture">
+    <div  >
+      <button class="rounded-full overflow-hidden" @click="openProfile">
+        <img class="w-12 h-12  object-cover" src="./svgs/User.svg" alt="Profile Picture">
+      </button>
     </div>
 </template>
 
 <script>
-export default {
-
+export default{
+    methods: {
+    openProfile() {
+      this.$emit('open')
+    },
+  },
 }
 </script>
 
