@@ -61,7 +61,7 @@
         </button>
       </div>
     </form>
-    <RegisterPopup v-if="registerPopup" @close="closePopup"/>
+    <RegisterPopup v-if="registerPopup" @close="closePopup" />
     <div class="text-center text-sm">
       <p class="text-[#333333]">
         Already have an account?

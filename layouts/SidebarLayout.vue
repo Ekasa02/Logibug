@@ -49,14 +49,12 @@
 </template>  
   
 <script>
-import LogibugLogo from '../components/major/LogibugLogo.vue';
 import Dashboard from '../views/LogibugDashboard.vue';
 // import IssuesPage from '../views/IssuesPage.vue'
 // import ReportPage from '../views/ReportPage.vue'
 
 export default {
     name: "SidebarLayout",
-    components: { LogibugLogo },
     data() {
         return {
             showLabels: false,

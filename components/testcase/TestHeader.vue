@@ -1,13 +1,14 @@
 <template>
     <div>
-        <div class="ml-auto">
-            <button @click="showProfile" class="m-0 p-0">
-                <LogibugProfile />
-            </button>
+        <div class="flex items-center justify-end py-[14px] pr-[100px] border-b-[1px] border-gray-300">
+            <div class="ml-auto">
+                <LogibugProfile @click="showPopup = true" />
+            </div>
         </div>
+        <DashboardPopup v-if="showPopup" @close="showPopup = false" />
     </div>
 </template>
-
+  
 <script>
 import LogibugProfile from '../major/LogibugProfile.vue';
 
@@ -17,11 +18,6 @@ export default {
         return {
             showPopup: false
         }
-    },
-    methods: {
-        showProfile() {
-            this.$emit("showProfile");
-        },
     }
 }
 </script>
