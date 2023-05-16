@@ -9,7 +9,10 @@
                         </div>
                         <div class="flex flex-col ml-3 items">
                             <h5 v-if="item.name" class="text-sm font-semibold text-gray-700">
-                                <span class="text-gray-700 font-semibold text-sm">{{ item.name }}</span>
+                                <nuxt-link
+                                    :to="{ path: '/createversion', query: { name: item.name, description: item.description, platform: item.platform, type_test: item.type_test } }">
+                                    <span class="text-gray-700 font-semibold text-sm">{{ item.name }}</span>
+                                </nuxt-link>
                             </h5>
                             <div class="flex gap-x-4 items-center">
                                 <h5 class=" text-gray-700 font-sm">
@@ -59,7 +62,7 @@ export default {
     },
     data() {
         return {
-           
+
         };
     },
 };
