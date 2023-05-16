@@ -3,11 +3,10 @@
         <SettingProfile @showProfile="showProfile"/>
         <div class="px-[100px] bg-[#FBFBFC] py-[30px] ">
             <DashboardPopup v-if="isProfileVisible" />
-            <div class="rounded-[20px] bg-white border border-solid border-[#EFEFF0] px-[40px]">
-                <ProfilePict/>
-                <EmailMember/>
-                <NameProfile/>
-                <ButtonSave/>
+            <div class="rounded-[20px] bg-[#C2CFFB] border border-solid border-[#EFEFF0] px-[40px] items-center justify-center">
+                <ProfilTestcase/>
+                <LevelDesc/>
+                <RateClass/>
             </div>
         </div>
     </div>
@@ -15,11 +14,9 @@
 
 <script>
 import SettingProfile from '../components/accountsetting/SettingProfile.vue';
-import DashboardPopup from '../components/dashboard/DashboardPopup.vue';
-import ProfilePict from '../components/accountsetting/ProfilPict.vue';
-import EmailMember from '../components/accountsetting/EmailMember.vue';
-import NameProfile from '../components/accountsetting/NameProfile.vue';
-import ButtonSave from '../components/accountsetting/ButtonSave.vue';
+import ProfilTestcase from '../components/achieve/ProfilTestcase.vue';
+import LevelDesc from '../components/achieve/LevelDesc.vue';
+import RateClass from '../components/achieve/RateClass.vue';
 
     export default {
         data(){
@@ -29,11 +26,10 @@ import ButtonSave from '../components/accountsetting/ButtonSave.vue';
         },
         components:{
             SettingProfile,
-            DashboardPopup,
-            ProfilePict,
-            EmailMember,
-            NameProfile,
-            ButtonSave,
+            ProfilTestcase,
+            LevelDesc,
+            RateClass,
+          
         },
         methods:{
             showProfile() {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="mx-5 rounded-[28px] px-6 py-2 w-[120px] flex items-center justify-center mt-3 text-white font-semibold text-sm bg-[#DD00D2]"
+      class="mx-5 rounded-[28px] px-6 py-2 w-[120px] flex items-center justify-center mt-3 text-white font-semibold text-sm bg-[linear-gradient(143.07deg, #5883D6 0%, #C2CFFB 98.57%)]"
     >
       <h1>Beginner</h1>
     </div>
@@ -15,17 +15,17 @@
     <div class="">
       <div class="flex text-[16px] px-5">
         <img src="../assets/Setting.svg" />
-        <nuxt-link to="/accsetting" class="pl-3">Account Setting</nuxt-link>
+        <NuxtLink to="/accsetting" class="pl-3">Account Setting</NuxtLink>
       </div>
       <hr class="border-gray-300 my-4 w-full" />
       <div class="flex text-[16px] px-5">
         <img src="../assets/Achievment.svg" />
-        <p class="pl-3">Achievement</p>
+        <NuxtLink to="/achievement" class="pl-3">Achievement</NuxtLink>
       </div>
       <hr class="border-gray-300 my-4 w-full" />
       <div class="flex text-[16px] px-5">
         <img src="../assets/InfoCircle.svg" />
-        <p class="pl-3">About</p>
+        <NuxtLink to="/about" class="pl-3">About</NuxtLink>
       </div>
       <hr class="border-gray-300 my-4 w-full" />
       <div class="flex text-[16px] pb-5 px-5">

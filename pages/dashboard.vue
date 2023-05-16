@@ -5,12 +5,12 @@
                 <DashboardProfile @showProfile="showProfile" />
             </div>
         </div>
-        <div class="px-[100px]">
+        <div class="px-[20%] md:px-[100px]">
             <DashboardPopup v-if="isProfileVisible" />
             <DashboardTitle user-name="John" />
             <DashboardLevel level="Beginner" />
             <DashboardProject />
-            <div class="flex justify-between" style="margin-top: 15px;">
+            <div class="md:flex justify-between" style="margin-top: 15px;">
                 <DashboardSearch />
                 <DashboardButton @showPopup="showPopup" />
             </div>
