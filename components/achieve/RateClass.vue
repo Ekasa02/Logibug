@@ -1,6 +1,6 @@
 <template>
-    <div class="flex gap-4 py-2">
-      <div class="w-1/4 rounded bg-[#F37FB7] px-4 py-2">
+    <div class="flex flex-wrap pt-14 pb-5 md:pt-16">
+      <div class="w-1/2 md:w-1/4 rounded bg-[#F37FB7] ">
         <div class="flex items-center justify-center">
             <div class="text-white">
               <div class="text-center">
@@ -18,7 +18,7 @@
             </div>
         </div>
       </div>
-      <div class="w-1/4 rounded bg-[#4DAEFF]">
+      <div class="w-1/2 md:w-1/4 rounded bg-[#4DAEFF] ">
         <div class="flex items-center justify-center">
             <div class="text-white">
               <div class="text-center">
@@ -36,7 +36,7 @@
             </div>
         </div>
       </div>
-      <div class="w-1/4 rounded bg-[#FCC42E]">
+      <div class="w-1/2 md:w-1/4 rounded bg-[#FCC42E] ">
         <div class="flex items-center justify-center">
             <div class="text-white">
               <div class="text-center">
@@ -54,7 +54,7 @@
             </div>
         </div>
       </div>
-      <div class="w-1/4 rounded bg-[#9747FF]">
+      <div class="w-1/2 md:w-1/4 rounded bg-[#9747FF] ">
         <div class="flex items-center justify-center">
             <div class="text-white">
               <div class="text-center">

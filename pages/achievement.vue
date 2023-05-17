@@ -1,9 +1,9 @@
 <template>
     <div>
         <SettingProfile @showProfile="showProfile"/>
-        <div class="px-[100px] bg-[#FBFBFC] py-[30px] ">
+        <div class=" bg-[#FBFBFC] md:px-4  md:py-3 ">
             <DashboardPopup v-if="isProfileVisible" />
-            <div class="rounded-[20px] bg-[#C2CFFB] border border-solid border-[#EFEFF0] px-[40px] items-center justify-center">
+            <div class="rounded-[20px] bg-[#C2CFFB] border border-solid border-[#EFEFF0]  px-[10px] md:px-[30px] items-center justify-center">
                 <ProfilTestcase/>
                 <LevelDesc/>
                 <RateClass/>

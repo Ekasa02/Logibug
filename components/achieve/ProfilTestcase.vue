@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-5 px-16">
+  <div class="pt-5 px-2 md:px-4 w-[100%] h-[100%] md:w-[100%] md:h-[100%]">
     <div class="bg-[#6352E2] rounded px-5">
       <div class="flex items-center gap-2 py-3">
         <div>

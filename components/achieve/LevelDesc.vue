@@ -1,13 +1,13 @@
     <template>
-        <div class="flex items-center justify-center">
-          <div class="text-white ">
+        <div class="flex items-center justify-center ">
+          <div class="text-white w-[280px] h-[36px] py-2 md:py-5">
             <div class="text-center">
               <h1 class="font-bold">Level</h1>
             </div>
-            <div>
+            <div class="">
               <p class="">
                 The completion of test cases will raise your
-                <br /> level and earn you achievements.
+                level and earn you achievements.
               </p>
             </div>
           </div>
