@@ -80,7 +80,7 @@ export default {
             try {
                 const response = await this.$axios.$get('/projects')
                 console.log(response)
-                this.items = response
+                this.items = response.data
             } catch (e) {
                 console.log(e)
             }
@@ -88,6 +88,6 @@ export default {
     },
     mounted() {
         this.getProject();
-    }
+    },
 }
 </script>
