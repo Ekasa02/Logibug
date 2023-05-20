@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div @click="openProfile"
     class="bg-[#33333385] fixed top-16  right-0 transform -translate-x-28"
   >
     <div >
@@ -24,6 +24,11 @@ export default {
     HeaderAccount,
     AccountProfil,
     LevelApp,
+  },
+  methods: {
+    openProfile() {
+      this.$emit('openProfile');
+    },
   },
 }
 </script>

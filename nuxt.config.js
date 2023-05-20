@@ -83,8 +83,8 @@ export default {
       },
     },
   },
-  router: {
-    middleware: ['auth']
-  }
+  // router: {
+  //   middleware: ['auth']
+  // }
 }
 
