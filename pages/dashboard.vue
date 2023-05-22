@@ -19,6 +19,7 @@
         <div style="padding: 20px 100px;">
             <DashboardTable :items="items" />
         </div>
+        <nuxtLink to="/tes/10">tes</nuxtLink>
     </div>
 </template>
 <script>
