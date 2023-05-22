@@ -50,6 +50,7 @@ export default {
       local: {
         redirect: {
           login: '/dashboard',
+          register: '/login',
           logout: '/',
           callback: '/login',
           home: '/'
@@ -59,7 +60,7 @@ export default {
           login: { url: '/login', method: 'post' },
           user: { url: '/profiles', method: 'get' },
           logout: false,
-          
+
         },
         token: {
           property: 'access_token'

@@ -54,8 +54,8 @@ export default {
             userInfo: {
                 // asharimidana1@gmail.com
                 // 12345678
-                email: this.email,
-                password: this.password,
+                email: 'asharimidana1@gmail.com',
+                password: '12345678',
             },
             email: '',
             password: '',
@@ -67,6 +67,7 @@ export default {
         async userLogin() {
             try {
                 const response = await this.$auth.loginWith('local', { data: this.userInfo })
+                this.$auth.strategy.token.get()
                 console.log(response)
                 this.$router.push('/dashboard')
             } catch (err) {
