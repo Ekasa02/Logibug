@@ -14,7 +14,7 @@
                 <DashboardSearch />
                 <DashboardButton @showPopup="showPopup" />
             </div>
-            <PopupCreate v-if="isPopupVisible" @closePopup="closePopup" @submit="createProject" @create="closePopup" />
+            <PopupCreate v-if="isPopupVisible" @closePopup="closePopup" @submit="createProject" />
         </div>
         <div style="padding: 20px 100px;">
             <DashboardTable :items="items" />
@@ -80,7 +80,7 @@ export default {
             try {
                 const response = await this.$axios.$get('/projects')
                 console.log(response)
-                this.items = response
+                this.items = response.data
             } catch (e) {
                 console.log(e)
             }
@@ -88,6 +88,6 @@ export default {
     },
     mounted() {
         this.getProject();
-    }
+    },
 }
 </script>
