@@ -4,6 +4,6 @@
             <h1 class="font-['Montserrat'] font-bold text-2xl sm:pr-[300px] pl-5">Member</h1>
             <img src="../../createproject/svg/CloseCircle.svg" class="pr-4">
         </div>
-        <hr class=" border-gray-300 my-4 w-full">
+        <hr class=" border-gray-300 w-full">
     </div>
 </template>
