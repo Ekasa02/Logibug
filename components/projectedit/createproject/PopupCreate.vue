@@ -13,6 +13,12 @@
         <input id="project-name" v-model="newItem.name"
           class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="text" placeholder="Project Name" required>
+        <label class="block text-gray-700 text-[14px] font-bold mb-2 pt-[15px]" for="description">
+          Description
+        </label>
+        <textarea id="description" v-model="newItem.description"
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Description your project" required></textarea>
         <div class="pt-[15px] relative">
           <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="platform">
             Platform
@@ -22,8 +28,8 @@
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Platform">
               <option value="" disabled selected>Select a platform</option>
-              <option value="Mobile">Mobile</option>
-              <option value="Web">Web</option>
+              <option value="mobile">Mobile</option>
+              <option value="web">Web</option>
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
               <svg class="w-4 h-4 text-gray-700" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -41,8 +47,8 @@
             <select id="project-name" v-model="newItem.type_test"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
               <option value="" disabled selected>Select an option</option>
-              <option value="Manual">Manual</option>
-              <option value="Automatic">Automatic</option>
+              <option value="manual">Manual</option>
+              <option value="automatic">Automatic</option>
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
               <svg class="w-4 h-4 text-gray-700" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -52,33 +58,28 @@
             </div>
           </div>
         </div>
-        <!-- <button type="submit">Add Item</button> -->
+        <div class="flex pt-[70px] justify-between sm:pt-14">
+          <button type="submit"
+            class="ml-auto mr-[15px]bg-[#FFFFFF] font-['Montserrat'] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500">
+            Add Item
+          </button>
+        </div>
       </form>
-      <div class="flex pt-[70px] justify-between sm:pt-14">
-        <button-cancel class="ml-auto mr-[15px]"></button-cancel>
-        <button-create></button-create>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonCancel from "./ButtonCancel.vue";
-import ButtonCreate from "./ButtonCreate.vue";
+// import ButtonCreate from "../editproject/ButtonCreate.vue";
 
 export default {
-  components: {
-    ButtonCancel,
-    ButtonCreate,
-  },
-  emits: ['submit'],
   data() {
     return {
       newItem: {
         name: '',
         description: '',
-        type_test: 'Web',
-        platform: 'Manual',
+        type_test: 'web',
+        platform: 'manual',
       },
     };
   },

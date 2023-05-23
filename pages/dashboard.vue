@@ -14,7 +14,7 @@
                 <DashboardSearch />
                 <DashboardButton @showPopup="showPopup" />
             </div>
-            <PopupCreate v-if="isPopupVisible" @closePopup="closePopup" @submit="createProject" @create="closePopup" />
+            <PopupCreate v-if="isPopupVisible" @closePopup="closePopup" />
         </div>
         <div style="padding: 20px 100px;">
             <DashboardTable :items="items" />

@@ -45,11 +45,16 @@ export default {
     baseURL: 'https://logibugv2.fly.dev/api/v1'
   },
 
+  generate: {
+    fallback: true
+  },
+
   auth: {
     strategies: {
       local: {
         redirect: {
           login: '/dashboard',
+          register: '/login',
           logout: '/',
           callback: '/login',
           home: '/'
@@ -59,7 +64,7 @@ export default {
           login: { url: '/login', method: 'post' },
           user: { url: '/profiles', method: 'get' },
           logout: false,
-          
+
         },
         token: {
           property: 'access_token'
