@@ -45,6 +45,10 @@ export default {
     baseURL: 'https://logibugv2.fly.dev/api/v1'
   },
 
+  generate: {
+    fallback: true
+  },
+
   auth: {
     strategies: {
       local: {
