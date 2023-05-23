@@ -9,7 +9,10 @@
             </div>
             <div class="pl-16 pt-10">
                 <p>Maximum photo size is 1 MB</p>
-                <button-select @click="browse"></button-select>
+                <button-select @input="updateImage"></button-select>
+                <button @click="saveImage" class="font-['Montserrat'] text-white bg-[#554AF0] font-semibold py-2 px-5 rounded mt-4">
+                    Save Photo
+                  </button>
             </div>
         </div>
        
@@ -20,12 +23,8 @@
 import ButtonSelect from "../profil/ButtonSelect.vue"
 
 export default {
-    props:{
-        value:{
-            type:Object,
-            default:null
-        },
-        defaultSrc:String
+    components:{
+        ButtonSelect,
     },
     data(){
         return{
@@ -34,18 +33,39 @@ export default {
         };
     },
     methods:{
-        browse(){
-            this.$refs.file.click();
+        updateImage(file){
+            this.file = file;
+            this.readFile();
+            // this.src = URL.createObjectURL(file);
         },
-        change(e){
-            this.file=e.target.files[0];
-            this.$emit("input", this.file);
+        readFile(){
             const reader = new FileReader();
-            reader.readAsDataURL(e.target.files[0]);
-            reader.onload = (e) => {
-                this.src = e.target.result;
+            reader.onload  = (event)=>{
+                this.src = event.target.result;
+            };
+            reader.readAsDataURL(this.file);
+        },
+        saveImage(){
+            if(this.file){
+                this.uploadImage(this.file);
             }
         },
+        uploadImage(file){
+            const formData = new FormData();
+            formData.append("image", file);
+            const url = "http://localhost://3000/api/v1/profiles";
+
+            fetch(url,{
+                method: "PUT",
+                body: formData,
+            })
+            .then((response) => {
+                console.log("Image success");
+            })
+            .catch((error)=>{
+                console.log("Image failed", error);
+            });
+        }
         // openFile(){
         //     const input = document.createElement('input');
         //     input.type='file';
@@ -73,8 +93,5 @@ export default {
         //     });
         // }
     },
-    components:{
-        ButtonSelect,
-    }
 }
 </script>

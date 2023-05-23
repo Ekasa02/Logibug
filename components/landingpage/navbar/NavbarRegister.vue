@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div >
         <nuxt-link to="/register">
-            <button class="bg-[#554AF0] text-white py-3 md:px-[20px] lg:px-[40px] text-l font-medium rounded-lg">
+            <button class="bg-[#554AF0] text-white py-1 px-2 md:px-[20px] lg:px-[30px] text-l font-medium rounded-lg">
                 Register Now
             </button>
         </nuxt-link>

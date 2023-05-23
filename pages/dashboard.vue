@@ -10,16 +10,16 @@
             <DashboardTitle user-name="John" />
             <DashboardLevel level="Beginner" />
             <DashboardProject />
-            <div class="md:flex justify-between" style="margin-top: 15px;">
+            <div class="md:flex justify-between " style="margin-top: 15px;">
                 <DashboardSearch />
-                <DashboardButton @showPopup="showPopup" />
+                <DashboardButton @showPopup="showPopup" class="pt-3"/>
             </div>
             <PopupCreate v-if="isPopupVisible" @closePopup="closePopup" @submit="createProject" />
         </div>
         <div style="padding: 20px 100px;">
             <DashboardTable :items="items" />
         </div>
-        <nuxtLink to="/tes/10">tes</nuxtLink>
+        
     </div>
 </template>
 <script>
