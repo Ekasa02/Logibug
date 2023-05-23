@@ -95,4 +95,3 @@
     components: { PopupEdit }
   };
   </script>
-  

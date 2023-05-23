@@ -1,6 +1,6 @@
 <template>
   <div @click="openProfile"
-    class="bg-[#33333385] fixed top-16  right-0 transform -translate-x-28"
+    class="bg-[#FFFFFF] rounded top-15 right-0 fixed md:top-16  md:right-0 transform -translate-x-28"
   >
     <div >
       <div class="bg-white rounded-lg shadow-lg">
