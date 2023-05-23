@@ -1,13 +1,13 @@
 <template>
     <div>
         <div>
-            <h1 class=" font-bold text-[16px] leading-6 pt-8">Profile picture</h1>
+            <h1 class=" font-bold text-[16px] leading-6 pt-4">Profile picture</h1>
         </div>
-        <div class="flex">
-            <div class="pt-4">
-                <img src=".././assets/Profil.svg" class="w-[200px] h-[200px] pt-3 rounded-full" alt="Profile picture">
+        <div class="flex items-center gap-x-12">
+            <div class="">
+                <img src=".././assets/Profil.svg" class="w-[125px] h-[125px] pt-3 rounded-full" alt="Profile picture">
             </div>
-            <div class="pl-16 pt-10">
+            <div class="">
                 <p>Maximum photo size is 1 MB</p>
                 <button-select></button-select>
             </div>
