@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex items-center sm:justify-center font-['monserrat']">
+  <div class="w-full md:bg-[#33333385] fixed md:top-0 md:left-0 md:right-0 md:bottom-0 flex md:items-center sm:justify-center font-montserrat">
     <div>
-      <div class="bg-white rounded-lg shadow-lg">
+      <div class="w-full bg-white md:rounded-lg md:shadow-lg">
         <header-create></header-create>
         <div class="pl-5 pr-5">
           <scenario-test></scenario-test>
