@@ -52,26 +52,21 @@
             </div>
           </div>
         </div>
-        <button type="submit">Add Item</button>
+        <div class="flex pt-[70px] justify-between sm:pt-14">
+          <button type="submit"
+            class="ml-auto mr-[15px]bg-[#FFFFFF] font-['Montserrat'] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500">
+            Edit Item
+          </button>
+        </div>
       </form>
-      <div class="flex pt-[70px] justify-between sm:pt-14">
-        <button-cancel class="ml-auto mr-[15px]"></button-cancel>
-        <!-- <button-create></button-create> -->
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonCancel from "../createproject/ButtonCancel.vue";
 // import ButtonCreate from "../editproject/ButtonCreate.vue";
 
 export default {
-  components: {
-    ButtonCancel,
-    // ButtonCreate,
-  },
-  emits: ['submit'],
   props: {
     item: {
       type: Object,
@@ -128,8 +123,6 @@ export default {
         // Handle error, such as displaying an error message to the user
       }
     }
-
-
   },
 };
 </script>

@@ -5,23 +5,23 @@
                 <DashboardProfile @showProfile="showProfile" />
             </div>
         </div>
-        <div class="px-[20%] md:px-[100px]">
+        <div class="px-[100px]">
             <DashboardPopup v-if="isProfileVisible" />
             <DashboardTitle user-name="John" />
             <DashboardLevel level="Beginner" />
             <DashboardProject />
-            <div class="md:flex justify-between " style="margin-top: 15px;">
+            <div class="flex justify-between" style="margin-top: 15px;">
                 <DashboardSearch />
-                <DashboardButton @showPopup="showPopup" class="pt-3"/>
+                <DashboardButton @showPopup="showPopup" />
             </div>
-            <PopupCreate v-if="isPopupVisible" @closePopup="closePopup" @submit="createProject" />
+            <PopupCreate v-if="isPopupVisible" @closePopup="closePopup" />
         </div>
         <div style="padding: 20px 100px;">
             <DashboardTable :items="items" />
         </div>
-        
     </div>
 </template>
+
 <script>
 import DashboardButton from '../components/dashboard/DashboardCreateproject.vue';
 import DashboardPopup from '../components/dashboard/DashboardPopup.vue';

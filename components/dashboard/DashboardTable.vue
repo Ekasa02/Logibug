@@ -9,19 +9,8 @@
               </div>
               <div class="flex flex-col ml-3 items">
                 <h5 v-if="item.name" class="text-sm font-semibold text-gray-700">
-                  <nuxt-link
-                    :to="{
-                      path: '/createversion',
-                      query: {
-                        name: item.name,
-                        description: item.description,
-                        platform: item.platform,
-                        type_test: item.type_test
-                      }
-                    }"
-                  >
-                    <span class="text-gray-700 font-semibold text-sm">{{ item.name }}</span>
-                  </nuxt-link>
+ 
+                    <span class="text-gray-700 font-semibold text-sm" @click="toCreateVersion(item.id)">{{ item.name }}</span>
                 </h5>
                 <div class="flex gap-x-4 items-center">
                   <h5 class="text-gray-700 font-sm">
@@ -62,7 +51,7 @@
       <div v-if="!items.length" class="flex justify-center">
         <img src="./svg/NoProject.svg" alt="No items found." class="h-[200px]">
       </div>
-      <PopupEdit v-if="isEditVisible" :item="selectedItem" @closeEdit="closeEdit" />
+      <PopupEdit v-if="isEditVisible" :item="selectedItem" @closePopup="closeEdit" />
     </div>
   </template>
   
@@ -98,9 +87,11 @@
       closeEdit() {
         this.isEditVisible = false;
         // Additional logic or actions after closing the edit popup
+      },
+      toCreateVersion(id){
+        this.$router.push(`/createversion/${id}`)
       }
     },
     components: { PopupEdit }
   };
   </script>
-  
