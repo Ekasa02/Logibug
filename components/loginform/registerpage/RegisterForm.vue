@@ -98,6 +98,9 @@ export default {
     },
   },
   methods: {
+    closePopup() {
+      this.registerPopup = false;
+    },
     validatePassword() {
       if (this.password.length < 8) {
         this.isInvalidPassword = true

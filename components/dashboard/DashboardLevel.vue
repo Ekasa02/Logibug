@@ -1,6 +1,6 @@
 <template>
     <div
-        :class="`rounded-[28px] px-6 py-2 w-[120px] flex items-center justify-center mt-3 text-white font-semibold text-sm ${levelClass}`">{{ level }}</div>
+        :class="`rounded-[28px] md:px-6 md:py-2 px-2 py-2 md:w-[120px] w-[80px] flex items-center justify-center mt-3 text-white font-semibold text-sm ${levelClass}`">{{ level }}</div>
 </template>
   
 <script>

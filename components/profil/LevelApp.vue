@@ -29,8 +29,8 @@
       </div>
       <hr class="border-gray-300 my-4 w-full" />
       <div class="flex text-[16px] pb-5 px-5">
-        <img src="../assets/Logout.svg" />
-        <p class="pl-3">Log Out</p>
+          <img src="../assets/Logout.svg" />
+        <NuxtLink to="/logout" class="pl-3">Log Out</NuxtLink>
       </div>
     </div>
   </div>

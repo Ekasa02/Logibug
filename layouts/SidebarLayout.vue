@@ -1,6 +1,6 @@
 <template>
     <div class="flex">
-        <div class="bg-[#F8F8FA] w-[80px] h-screen flex flex-col border-r-[1px] border-gray-300 sidebar-transition hover:w-1/5"
+        <div class=" bg-[#F8F8FA] w-[80px] h-screen flex flex-col border-r-[1px] border-gray-300 sidebar-transition hover:w-1/5"
             @mouseenter="showLabels = true" @mouseleave="showLabels = false">
             <!-- Sidebar content -->
             <div class="flex-1 flex flex-col justify-start items-center text-[#999999]">
