@@ -28,8 +28,8 @@
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Platform">
               <option value="" disabled selected>Select a platform</option>
-              <option value="Mobile">Mobile</option>
-              <option value="Web">Web</option>
+              <option value="mobile">Mobile</option>
+              <option value="web">Web</option>
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
               <svg class="w-4 h-4 text-gray-700" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -47,8 +47,8 @@
             <select id="project-name" v-model="newItem.type_test"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
               <option value="" disabled selected>Select an option</option>
-              <option value="Manual">Manual</option>
-              <option value="Automatic">Automatic</option>
+              <option value="manual">Manual</option>
+              <option value="automatic">Automatic</option>
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
               <svg class="w-4 h-4 text-gray-700" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -78,8 +78,8 @@ export default {
       newItem: {
         name: '',
         description: '',
-        type_test: 'Web',
-        platform: 'Manual',
+        type_test: 'web',
+        platform: 'manual',
       },
     };
   },
