@@ -9,11 +9,13 @@
         <!-- <popupedit-test></popupedit-test> -->
         <!-- <popup-deletetest></popup-deletetest> -->
         <!-- <popup-filter></popup-filter> -->
+        <!-- <register-success></register-success> -->
+        <detail-test></detail-test>
     </div>
 </template>
 
 <script>
-
+// import RegisterSuccess from '../components/loginform/popup/RegisterSuccess.vue';
 // import PopupTestcase from "../components/projectedit/testcase/PopupTestcase.vue";
 // import PopupLog from '../components/loginform/logout/PopupLog.vue';
 // import PopupMember from '../components/projectedit/invitemember/member/PopupMember.vue';
@@ -23,7 +25,7 @@
 // import PopupeditTest from '../components/projectedit/testcase/edittestcase/PopupeditTest.vue';
 // import PopupDeletetest from '../components/projectedit/testcase/popupdeletetestcase/PopupDeletetest.vue';
 // import PopupFilter from '../components/projectedit/testcase/filtertestase/PopupFilter.vue';
-
+import DetailTest from '../components/detailtestcase/DetailTest.vue';
 
 export default{
     components:{
@@ -36,6 +38,8 @@ export default{
         // PopupeditTest,
         // PopupDeletetest,
         // PopupFilter,
+        // RegisterSuccess,
+        DetailTest,
     }
 }
 </script>
