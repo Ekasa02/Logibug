@@ -1,16 +1,21 @@
 <template>
     <div>
-        <button @click="logout">Logout</button>
+        <!-- <button @click="logout">Logout</button> -->
+        <PopupLog/>
     </div>
 </template>
 
 <script>
+       import PopupLog from "../components/loginform/logout/PopupLog.vue"; 
     export default {
-        methods: {
-        async logout() {
-            await this.$auth.logout(/* .... */)
+        components:{
+            PopupLog,
         }
-    }
+        // methods: {
+        // async logout() {
+        //     await this.$auth.logout(/* .... */)
+        // }
+    // }
 } 
     
 </script>

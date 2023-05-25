@@ -1,6 +1,6 @@
 <template>
     <div class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex sm:items-center sm:justify-center ">
-        <div class="w-950px h-950px bg-white p-8 rounded-lg shadow-lg">
+        <div class=" bg-white p-8 rounded-lg shadow-lg">
             <div class="pl-[400px]">
                 <img src="../.././assets/CloseCircle.svg" alt="image" >
             </div>
@@ -14,6 +14,7 @@
                 <button-yes></button-yes>
             </div>
         </div>
+        <!-- <PopupLog v-if="popupLog" @close="closePopup"/> -->
     </div>
 </template>
 
@@ -22,6 +23,28 @@ import ButtonNo from "./ButtonNo.vue";
 import ButtonYes from './ButtonYes.vue';
 
 export default {
+    // data(){
+    //     return{
+    //         logPopup:false,
+    //         user:[]
+    //     }
+    // },
+    // methods:{
+    //     closePopup(){
+    //         this.logPopup=false;
+    //     }
+    // },
+    // async logout(){
+    //     try{
+    //         const response = await this.$axios.$get('/logout')
+    //         console.log(response)
+    //         this.user=response.data
+    //     }
+    //     catch {
+    //         console.log('logout success!!')
+    //     }
+
+    // },
     components:{
         ButtonNo, 
         ButtonYes,

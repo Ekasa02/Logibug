@@ -30,8 +30,23 @@
       <hr class="border-gray-300 my-4 w-full" />
       <div class="flex text-[16px] pb-5 px-5">
           <img src="../assets/Logout.svg" />
-        <NuxtLink to="/logout" class="pl-3">Log Out</NuxtLink>
+        <NuxtLink to="/logout" class="pl-3" >Log Out</NuxtLink>
       </div>
     </div>
   </div>
 </template>
+
+<!-- <script>
+export default{
+  data(){
+    return{
+      logPopup: false,
+    },
+  };
+  methods: {
+    closePopup() {
+      this.logPopup = false;
+    }
+  }
+}
+</script> -->
