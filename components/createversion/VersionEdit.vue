@@ -6,23 +6,16 @@
                 <img src="../createversion/svg/CloseCircle.svg" class="cursor-pointer" @click="closeModal">
             </div>
             <hr class="border-gray-300 my-4 w-full">
-            <form @submit.prevent="postProject">
+            <form @submit.prevent="editVersion">
                 <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="version-name">
                     Version Name
                 </label>
-                <input
-                    id="version-name"
-                    v-model="editedItem.name"
+                <input id="version-name" v-model="editedItem.name"
                     class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    type="text"
-                    placeholder="Version Name"
-                    required
-                >
+                    type="text" placeholder="Version Name" required>
                 <div class="flex pt-[70px] justify-between sm:pt-14">
-                    <button
-                        type="submit"
-                        class="ml-auto mr-[15px] bg-[#FFFFFF] font-['Montserrat'] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500"
-                    >
+                    <button type="submit"
+                        class="ml-auto mr-[15px] bg-[#FFFFFF] font-['Montserrat'] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500">
                         Update Item
                     </button>
                 </div>
@@ -54,6 +47,21 @@ export default {
         closeModal() {
             this.$emit("closePopup");
         },
+        async editVersion() {
+            try {
+                const response = await this.$axios.$put(`/versions/${this.item.id}`, {
+                    name: this.editedItem.name,
+                });
+                console.log(response.data);
+                // Handle success, such as displaying a success message or redirecting to another page
+
+                // Emit an event to notify the parent component about the successful edit
+                this.$emit('versionEdited', response.data);
+            } catch (error) {
+                console.error(error);
+                // Handle error, such as displaying an error message to the user
+            }
+        }
     },
 };
 </script>
