@@ -72,10 +72,10 @@ export default {
     methods: {
         async userLogin() {
             try {
-                // const response = await this.$auth.loginWith('local', { data: this.userInfo })
-                const response = await this.$auth.loginWith('local', {
-                    data: { email: this.email, password: this.password },
-                });
+                const response = await this.$auth.loginWith('local', { data: this.userInfo })
+                // const response = await this.$auth.loginWith('local', {
+                //     data: { email: this.email, password: this.password },
+                // });
                 this.$auth.strategy.token.get();
                 console.log(response);
                 this.$router.push('/dashboard');
