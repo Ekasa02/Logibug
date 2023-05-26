@@ -36,7 +36,7 @@ export default {
             isCreateVisible: false,
             id: this.$route.params.id,
             items: []
-        }
+        };
     },
     mounted() {
         this.getVersion();
@@ -50,16 +50,15 @@ export default {
         },
         async getVersion() {
             try {
-                const response = await this.$axios.$get(`/versions/?project_id=${this.id}`)
-                console.log(response)
-                this.items = response.data
+                const response = await this.$axios.$get(`/versions/?project_id=${this.id}`);
+                console.log(response);
+                this.items = response.data;
             } catch (e) {
-                console.log(e)
+                console.log(e);
             }
         }
-    },
-}
+    }
+};
 </script>
   
 <style lang="scss" scoped></style>
-  

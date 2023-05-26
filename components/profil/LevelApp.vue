@@ -30,8 +30,26 @@
       <hr class="border-gray-300 my-4 w-full" />
       <div class="flex text-[16px] pb-5 px-5">
           <img src="../assets/Logout.svg" />
-        <NuxtLink to="/logout" class="pl-3">Log Out</NuxtLink>
+          <button @click="showLogout" class="pl-3" >Log Out</button>
       </div>
     </div>
+    <PopupLog v-if="isPopupLogout" @showLogout="showLogout"/>
   </div>
 </template>
+
+<script>
+import PopupLog from "../loginform/logout/PopupLog.vue";
+export default{
+  components:{PopupLog},
+  data(){
+    return{
+      isPopupLogout: false,
+    }
+  },
+  methods: {
+    showLogout() {
+      this.isPopupLogout = true;
+    }
+  }
+}
+</script>
