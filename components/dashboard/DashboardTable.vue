@@ -9,7 +9,6 @@
               </div>
               <div class="flex flex-col ml-3 items">
                 <h5 v-if="item.name" class="text-sm font-semibold text-gray-700">
- 
                     <span class="text-gray-700 font-semibold text-sm" @click="toCreateVersion(item.id)">{{ item.name }}</span>
                 </h5>
                 <div class="flex gap-x-4 items-center">
