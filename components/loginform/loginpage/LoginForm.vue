@@ -60,8 +60,8 @@ export default {
             userInfo: {
                 // asharimidana1@gmail.com
                 // 12345678
-                email: 'asharimidana1@gmail.com',
-                password: '12345678',
+                email: '',
+                password: '',
             },
             email: '',
             password: '',

@@ -7,7 +7,7 @@
         </div>
         <div class="px-[100px]">
             <DashboardPopup v-if="isProfileVisible" />
-            <DashboardTitle user-name="John" />
+            <DashboardTitle  />
             <DashboardLevel level="Beginner" />
             <DashboardProject />
             <div class="flex justify-between" style="margin-top: 15px;">
@@ -50,6 +50,7 @@ export default {
         return {
             isPopupVisible: false,
             isProfileVisible: false,
+            
             items: [
                 // { id: "Item 1", projectTitle: "Logibug v1", projectVersion: "Testing version 1", projectPlatform: "Web", projectTesting: "Manual" },
                 // { id: "Item 2", projectTitle: "Logibug v1", projectVersion: "Testing version 1", projectPlatform: "Mobile", projectTesting: "Manual" },
@@ -84,7 +85,7 @@ export default {
             } catch (e) {
                 console.log(e)
             }
-        }
+        },
     },
     mounted() {
         this.getProject();
