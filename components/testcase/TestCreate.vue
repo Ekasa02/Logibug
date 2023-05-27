@@ -27,7 +27,7 @@
                             <div
                                 @click="showScenario"
                                 class="hover:opacity-80 text-white font-bold py-2 px-2.5 rounded-xl ml-3 border border-gray-300">
-                                <img src="./svg/plus.svg" alt="Plus Icon" class="h-5 w-5">
+                                <img src="./svg/Plus.svg" alt="Plus Icon" class="h-5 w-5">
                             </div>
                         </div>
                     </div>
