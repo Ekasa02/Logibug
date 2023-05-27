@@ -1,7 +1,7 @@
 <template>
     <div>
       <ul class="list-group h-full py-4">
-        <li class="list-group-item mb-2" v-for="item in items" :key="item.id">
+        <li v-for="item in items" :key="item.id" class="list-group-item mb-2" >
           <div class="flex w-full justify-between border-b border-solid py-2">
             <div class="flex items-center">
               <div class="py-2">
@@ -37,9 +37,12 @@
               </div>
             </div>
             <div class="flex items-center gap-x-4">
-              <button @click="deleteItem(item.id)">
-                <img src="./svg/Delete.svg" alt="List Icon" class="h-[20px] w-[20px]">
-              </button>
+              <div @click="deleteProject">
+                <button @click="deleteItem(item.id)" >
+                  <img  src="./svg/Delete.svg" alt="List Icon" class="h-[20px] w-[20px]">
+                </button>
+              </div>
+              <DeletePopup v-if="isPopupDelete" @deleteProject="deleteProject"/>
               <button @click="editPopup(item)">
                 <img src="./svg/Edit.svg" alt="List Icon" class="h-[20px] w-[20px]">
               </button>
@@ -56,7 +59,8 @@
   
   <script>
   import PopupEdit from '../projectedit/editproject/PopupEdit.vue';
-  
+  import DeletePopup from '../projectedit/deleteproject/DeletePopup.vue';
+
   export default {
     props: {
       items: {
@@ -67,13 +71,17 @@
     data() {
       return {
         isEditVisible: false,
-        selectedItem: null
+        selectedItem: null,
+        isPopupDelete:false,
       };
     },
     methods: {
       editPopup(item) {
         this.selectedItem = item;
         this.isEditVisible = true;
+      },
+      deleteProject(){
+        this.isPopupDelete=true
       },
       async deleteItem(id) {
         try {
@@ -91,6 +99,6 @@
         this.$router.push(`/createversion/${id}`)
       }
     },
-    components: { PopupEdit }
+    components: { PopupEdit, DeletePopup }
   };
   </script>
