@@ -28,7 +28,7 @@ export default {
     },
     methods:{
         deleteProject(){
-            this.$("deleteProject")
+            this.$emit("deleteProject")
         }
     }
 }
