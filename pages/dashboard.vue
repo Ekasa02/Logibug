@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <div class="flex items-center justify-end py-[14px] pr-[100px] border-b-[1px] border-gray-300">
             <div class="ml-auto">
                 <DashboardProfile @showProfile="showProfile" />

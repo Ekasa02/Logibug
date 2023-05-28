@@ -24,21 +24,28 @@
 </template>
   
 <script>
+import DeletePopup from '../projectedit/deleteproject/DeletePopup.vue';
 import VersionEdit from './VersionEdit.vue';
 
 export default {
-    components: { VersionEdit },
-    props: {
-        items: {
-            type: Array,
-            default: () => []
-        }
+  components: { DeletePopup, VersionEdit },
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
     },
-    data() {
-        return {
-            isEditVisible: false,
-            selectedItem: null
-        };
+  },
+  data() {
+    return {
+      isEditVisible: false,
+      selectedItem: null,
+      isPopupDelete: false,
+    }
+  },
+  methods: {
+    editPopup(item) {
+      this.selectedItem = item
+      this.isEditVisible = true
     },
     methods: {
         editPopup(item) {
@@ -59,7 +66,24 @@ export default {
         toCreateVersion(id) {
             this.$router.push(`/testcase/${id}`);
         }
+    deleteProject() {
+      this.isPopupDelete = true
     },
+    closePopup() {
+      this.isEditVisible = false
+    },
+    async deleteItem(id) {
+      try {
+        const response = await this.$axios.delete(`/versions/${id}`)
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    toCreateVersion(id) {
+      this.$router.push(`/testcase/${id}`)
+    },
+  },
 }
 </script>
-  
+<style lang="scss" scoped></style>
