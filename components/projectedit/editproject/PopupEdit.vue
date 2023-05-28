@@ -64,8 +64,6 @@
 </template>
 
 <script>
-// import ButtonCreate from "../editproject/ButtonCreate.vue";
-
 export default {
   props: {
     item: {
@@ -95,8 +93,6 @@ export default {
       this.$emit("closePopup");
     },
     submitForm() {
-      // Validate form fields here...
-      // this.$emit('submitForm', this.newItem);
       this.$emit('submit', this.newItem);
 
       this.newItem = {
@@ -118,6 +114,9 @@ export default {
 
         // Emit an event to notify the parent component about the successful edit
         this.$emit('projectEdited', response.data);
+
+        // Reload the page after the edit is successful
+        window.location.reload();
       } catch (error) {
         console.error(error);
         // Handle error, such as displaying an error message to the user

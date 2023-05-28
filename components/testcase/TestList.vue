@@ -11,21 +11,47 @@
               <div class="bg-[#FCD051] px-[20px] py-[2px] rounded-xl text-white">Positif</div>
             </div>
           </div>
+          <div class="flex gap-x-3 items-center ml-auto">
+            <button @click="deleteItem(item.id)">
+              <img src="./svg/Delete.svg" alt="List Icon" class="h-[20px] w-[20px]">
+            </button>
+            <button @click="editPopup(item)">
+              <img src="./svg/Edit.svg" alt="List Icon" class="h-[20px] w-[20px]">
+            </button>
+          </div>
         </div>
       </li>
     </ul>
+    <TestEdit v-if="isEditVisible" :item="selectedItem" @closePopup="closePopup" />
   </div>
 </template>
   
 <script>
+import TestEdit from './TestEdit.vue';
 export default {
+  components: {
+    TestEdit
+  },
   props: {
     items: {
       type: Array,
       default: () => []
     }
   },
+  data() {
+    return {
+      isEditVisible: false,
+      selectedItem: null
+    };
+  },
   methods: {
+    editPopup(item) {
+      this.selectedItem = item;
+      this.isEditVisible = true;
+    },
+    closePopup() {
+      this.isEditVisible = false;
+    },
     toDetailTest(id) {
       this.$router.push(`/detailtest/${id}`)
     }
