@@ -1,7 +1,7 @@
-<template>
+<!-- <template>
     <div>
         <!-- <button @click="logout">Logout</button> -->
-        <PopupLog/>
+        <!-- <PopupLog/>
     </div>
 </template>
 
@@ -10,16 +10,16 @@
     export default {
         components:{
             PopupLog,
-        }
-        // methods: {
+        } -->
+        <!-- // methods: {
         // async logout() {
         //     await this.$auth.logout(/* .... */)
         // }
     // }
-} 
+}  -->
     
-</script>
+<!-- </script>
 
 <style lang="scss" scoped>
     
-</style>
+</style> -->
