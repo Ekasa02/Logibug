@@ -1,6 +1,6 @@
 <template>
-  <div @click="openProfile"
-    class="bg-[#33333385] top-15 right-0 fixed md:top-16  md:right-0 transform -translate-x-28"
+  <div 
+    class="bg-[#33333385] top-15 right-0 fixed md:top-16  md:right-0 transform -translate-x-28" @click="openProfile"
   >
     <div >
       <div class="bg-white rounded-lg shadow-lg">
@@ -29,6 +29,7 @@ export default {
     openProfile() {
       this.$emit('openProfile');
     },
+    
   },
 }
 </script>

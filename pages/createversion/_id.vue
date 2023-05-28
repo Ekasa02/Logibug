@@ -10,15 +10,15 @@
         />
         <div class="flex gap-x-4">
           <button
-            @click="infoMember"
-            class="bg-[#FFFFFF] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500"
+          class="bg-[#FFFFFF] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500"
+          @click="infoMember"
           >
             Member
           </button>
           <PopupMember v-if="isPopupMember" @infoMember="infoMember" />
           <button
-            @click="showCreate"
-            class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded"
+          class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded"
+          @click="showCreate"
           >
             Create version
           </button>
