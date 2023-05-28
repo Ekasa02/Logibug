@@ -8,10 +8,10 @@
                         <h1 class="font-semibold text-xl">{{ item.name }}</h1>
                     </div>
                     <div class="flex gap-3 items-center">
-                        <button @click="deleteItem(item.id); $event.stopPropagation()">
+                        <button @click="deletePopup(item.id); $event.stopPropagation()">
                             <img src="./svg/Delete.svg" alt="List Icon" class="h-5 w-5">
                         </button>
-                        <img src="./svg/Copy.svg" alt="List Icon" class="h-5 w-5">
+                        <img src="./svg/Copy.svg" alt="List Icon">
                         <button @click="editPopup(item); $event.stopPropagation()">
                             <img src="./svg/Edit.svg" alt="List Icon" class="h-5 w-5">
                         </button>
@@ -20,70 +20,63 @@
             </li>
         </ul>
         <VersionEdit v-if="isEditVisible" :item="selectedItem" @closePopup="closePopup" />
+        <VersionDelete v-if="isDeleteVisible" :item="deleteItem" @deleteVersion="deleteVersion"/>
     </div>
 </template>
   
 <script>
-import DeletePopup from '../version/deleteversion/DeletePopup.vue';
 import VersionEdit from './VersionEdit.vue';
+import VersionDelete from './VersionDelete.vue';
 
 export default {
-  components: { DeletePopup, VersionEdit },
-  props: {
-    items: {
-      type: Array,
-      default: () => [],
+    components: { VersionEdit, VersionDelete },
+    props: {
+        items: {
+            type: Array,
+            default: () => [],
+        },
     },
-  },
-  data() {
-    return {
-      isEditVisible: false,
-      selectedItem: null,
-      isPopupDelete: false,
-    }
-  },
-  methods: {
-    editPopup(item) {
-      this.selectedItem = item
-      this.isEditVisible = true
+    data() {
+        return {
+            isEditVisible: false,
+            isDeleteVisible: false,
+            selectedItem: null,
+            deleteItem: null,
+            isPopupDelete: false,
+        }
     },
     methods: {
         editPopup(item) {
-            this.selectedItem = item;
-            this.isEditVisible = true;
+            this.selectedItem = item
+            this.isEditVisible = true
         },
         closePopup() {
             this.isEditVisible = false;
         },
-        async deleteItem(id) {
-            try {
-                const response = await this.$axios.delete(`/versions/${id}`);
-                console.log(response);
-            } catch (error) {
-                console.log(error);
-            }
+        deletePopup(item) {
+            this.deleteItem = item
+            this.isDeleteVisible = true;
         },
+        deleteVersion() {
+            this.isDeleteVisible = false;
+        },
+        // async deleteItem(id) {
+        //     try {
+        //         const response = await this.$axios.delete(`/versions/${id}`);
+        //         console.log(response);
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+        // },
         toCreateVersion(id) {
             this.$router.push(`/testcase/${id}`);
-        }
-    deleteProject() {
-      this.isPopupDelete = true
+        },
+        deleteProject() {
+            this.isPopupDelete = true
+        },
     },
-    closePopup() {
-      this.isEditVisible = false
-    },
-    async deleteItem(id) {
-      try {
-        const response = await this.$axios.delete(`/versions/${id}`)
-        console.log(response)
-      } catch (error) {
-        console.log(error)
-      }
-    },
-    toCreateVersion(id) {
-      this.$router.push(`/testcase/${id}`)
-    },
-  },
 }
+
 </script>
+
 <style lang="scss" scoped></style>
