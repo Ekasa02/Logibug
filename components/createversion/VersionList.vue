@@ -2,9 +2,9 @@
     <div>
         <ul class="list-group h-full mt-[50px]">
             <li class="list-group-item mb-2" v-for="item in items" :key="item.id">
-                <div class="border-b border-gray-200 flex justify-between pb-[20px]">
+                <div class="border-b border-gray-200 flex justify-between pb-[20px] hover:cursor-pointer" @click="toCreateVersion(item.id)">
                     <div class="flex">
-                        <h1 class="font-semibold text-xl" @click="toCreateVersion(item.id)">{{ item.name }}</h1>
+                        <h1 class="font-semibold text-xl">{{ item.name }}</h1>
                     </div>
                     <div class="flex gap-x-3 items-center">
                         <button @click="deleteItem(item.id)">

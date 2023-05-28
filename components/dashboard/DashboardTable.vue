@@ -1,22 +1,18 @@
 <template>
-    <div>
+  <div class="list-container">
+    <div class="max-h-[40vh] overflow-y-auto">
       <ul class="list-group h-full py-4">
-        <li v-for="item in items" :key="item.id" class="list-group-item mb-2" >
-          <div class="flex w-full justify-between border-b border-solid py-2">
+        <li class="list-group-item mb-2" v-for="item in items" :key="item.id">
+          <div class="flex w-full justify-between border-b border-solid py-2 hover:cursor-pointer" @click="toCreateVersion(item.id)">
             <div class="flex items-center">
               <div class="py-2">
                 <img src="./svg/List.svg" alt="List Icon" class="h-full">
               </div>
               <div class="flex flex-col ml-3 items">
                 <h5 v-if="item.name" class="text-sm font-semibold text-gray-700">
-                    <span class="text-gray-700 font-semibold text-sm" @click="toCreateVersion(item.id)">{{ item.name }}</span>
+                  <span class="text-gray-700 font-semibold text-sm">{{ item.name }}</span>
                 </h5>
-                <div class="flex gap-x-4 items-center">
-                  <h5 class="text-gray-700 font-sm">
-                    <span v-if="item.description" :id="'project-version-' + item.id" class="text-gray-400 font-semibold">
-                      {{ item.description }}
-                    </span>
-                  </h5>
+                <div class="flex gap-x-4 items-center mt-2">
                   <div v-if="item.platform === 'mobile'" class="text-gray-300">
                     <div>
                       <img src="./svg/Mobile.svg" alt="List Icon" class="h-full">
@@ -36,69 +32,62 @@
                 </div>
               </div>
             </div>
-            <div class="flex items-center gap-x-4">
-              <div @click="deleteProject">
-                <button @click="deleteItem(item.id)" >
-                  <img  src="./svg/Delete.svg" alt="List Icon" class="h-[20px] w-[20px]">
-                </button>
-              </div>
-              <DeletePopup v-if="isPopupDelete" @deleteProject="deleteProject"/>
-              <button @click="editPopup(item)">
+            <div class="flex items-center gap-x-4 mr-4">
+              <button @click="deleteItem(item.id); $event.stopPropagation()">
+                <img src="./svg/Delete.svg" alt="List Icon" class="h-[20px] w-[20px]">
+              </button>
+              <button @click="editPopup(item); $event.stopPropagation()">
                 <img src="./svg/Edit.svg" alt="List Icon" class="h-[20px] w-[20px]">
               </button>
             </div>
           </div>
         </li>
       </ul>
-      <div v-if="!items.length" class="flex justify-center">
-        <img src="./svg/NoProject.svg" alt="No items found." class="h-[200px]">
-      </div>
-      <PopupEdit v-if="isEditVisible" :item="selectedItem" @closePopup="closeEdit" />
     </div>
-  </template>
-  
-  <script>
-  import PopupEdit from '../projectedit/editproject/PopupEdit.vue';
-  import DeletePopup from '../projectedit/deleteproject/DeletePopup.vue';
+    <div v-if="!items.length" class="flex justify-center">
+      <img src="./svg/NoProject.svg" alt="No items found." class="h-[200px]">
+    </div>
+    <PopupEdit v-if="isEditVisible" :item="selectedItem" @closePopup="closeEdit" />
+  </div>
+</template>
 
-  export default {
-    props: {
-      items: {
-        type: Array,
-        default: () => []
+<script>
+import PopupEdit from '../projectedit/editproject/PopupEdit.vue';
+
+export default {
+  components: { PopupEdit },
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data() {
+    return {
+      isEditVisible: false,
+      selectedItem: null
+    };
+  },
+  methods: {
+    editPopup(item) {
+      this.selectedItem = item;
+      this.isEditVisible = true;
+    },
+    async deleteItem(id) {
+      try {
+        const response = await this.$axios.delete(`/projects/${id}`);
+        console.log(response);
+      } catch (error) {
+        console.log(error);
       }
     },
-    data() {
-      return {
-        isEditVisible: false,
-        selectedItem: null,
-        isPopupDelete:false,
-      };
+    closeEdit() {
+      this.isEditVisible = false;
+      // Additional logic or actions after closing the edit popup
     },
-    methods: {
-      editPopup(item) {
-        this.selectedItem = item;
-        this.isEditVisible = true;
-      },
-      deleteProject(){
-        this.isPopupDelete=true
-      },
-      async deleteItem(id) {
-        try {
-          const response = await this.$axios.delete(`/projects/${id}`);
-          console.log(response);
-        } catch (error) {
-          console.log(error);
-        }
-      },
-      closeEdit() {
-        this.isEditVisible = false;
-        // Additional logic or actions after closing the edit popup
-      },
-      toCreateVersion(id){
-        this.$router.push(`/createversion/${id}`)
-      }
-    },
-    components: { PopupEdit, DeletePopup }
-  };
-  </script>
+    toCreateVersion(id) {
+      this.$router.push(`/createversion/${id}`);
+    }
+  },
+};
+</script>
