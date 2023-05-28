@@ -1,7 +1,7 @@
 <template>
     <div class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex items-center sm:justify-center font-['monserrat']">
       <div>
-        <div class="bg-white rounded-lg shadow-lg pb-3">
+        <div @click="infoMember" class="bg-white rounded-lg shadow-lg pb-3">
           <header-member></header-member>
           <div class="px-5 pt-2 border-b border-gray-300 border-[85%]">
             <div class="flex items-center justify-between">
@@ -48,6 +48,9 @@
       this.getMember();
     },
     methods:{
+      infoMember(){
+        this.$emit("infoMember")
+      },
       async getMember() {
             try {
                 const response = await this.$axios.$get('/projects')
