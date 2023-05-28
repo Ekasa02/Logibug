@@ -13,18 +13,12 @@
         <input id="project-name" v-model="newItem.name"
           class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="text" placeholder="Project Name" required>
-        <label class="block text-gray-700 text-[14px] font-bold mb-2 pt-[15px]" for="description">
-          Description
-        </label>
-        <textarea id="description" v-model="newItem.description"
-          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          placeholder="Description your project" required></textarea>
         <div class="pt-[15px] relative">
           <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="platform">
             Platform
           </label>
           <div class="relative">
-            <select id="platform" v-model="newItem.platform"
+            <select id="platform" v-model="newItem.platform" required
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Platform">
               <option value="" disabled selected>Select a platform</option>
@@ -44,7 +38,7 @@
             Testing Type
           </label>
           <div class="relative">
-            <select id="project-name" v-model="newItem.type_test"
+            <select id="project-name" v-model="newItem.type_test" required
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
               <option value="" disabled selected>Select an option</option>
               <option value="manual">Manual</option>
@@ -70,8 +64,6 @@
 </template>
 
 <script>
-// import ButtonCreate from "../editproject/ButtonCreate.vue";
-
 export default {
   data() {
     return {
@@ -87,22 +79,12 @@ export default {
     closeModal() {
       this.$emit("closePopup");
     },
-    submitForm() {
-      // Validate form fields here...
-      // this.$emit('submitForm', this.newItem);
-      this.$emit('submit', this.newItem)
-
-      this.newItem = {
-        name: '',
-        description: '',
-        type_test: 'Web',
-        platform: 'Manual',
-      };
-    },
     async postProject() {
       try {
         const response = await this.$axios.$post('/projects', this.newItem);
         console.log(response);
+        // Reload the page
+        location.reload();
       } catch (error) {
         console.log(error);
       }
