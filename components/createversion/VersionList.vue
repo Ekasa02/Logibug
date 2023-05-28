@@ -1,18 +1,19 @@
 <template>
     <div>
-        <ul class="list-group h-full mt-[50px]">
+        <ul class="list-group h-full mt-8 max-h-[70vh] overflow-y-auto">
             <li class="list-group-item mb-2" v-for="item in items" :key="item.id">
-                <div class="border-b border-gray-200 flex justify-between pb-[20px] hover:cursor-pointer" @click="toCreateVersion(item.id)">
+                <div class="border-b border-gray-200 flex justify-between pb-5 hover:cursor-pointer"
+                    @click="toCreateVersion(item.id)">
                     <div class="flex">
                         <h1 class="font-semibold text-xl">{{ item.name }}</h1>
                     </div>
-                    <div class="flex gap-x-3 items-center">
-                        <button @click="deleteItem(item.id)">
-                            <img src="./svg/Delete.svg" alt="List Icon" class="h-[20px] w-[20px]">
+                    <div class="flex gap-3 items-center">
+                        <button @click="deleteItem(item.id); $event.stopPropagation()">
+                            <img src="./svg/Delete.svg" alt="List Icon" class="h-5 w-5">
                         </button>
-                        <img src="./svg/Copy.svg" alt="List Icon" class="h-[20px] w-[20px]">
-                        <button @click="editPopup(item)">
-                            <img src="./svg/Edit.svg" alt="List Icon" class="h-[20px] w-[20px]">
+                        <img src="./svg/Copy.svg" alt="List Icon" class="h-5 w-5">
+                        <button @click="editPopup(item); $event.stopPropagation()">
+                            <img src="./svg/Edit.svg" alt="List Icon" class="h-5 w-5">
                         </button>
                     </div>
                 </div>
@@ -21,7 +22,7 @@
         <VersionEdit v-if="isEditVisible" :item="selectedItem" @closePopup="closePopup" />
     </div>
 </template>
-
+  
 <script>
 import VersionEdit from './VersionEdit.vue';
 
@@ -56,10 +57,9 @@ export default {
             }
         },
         toCreateVersion(id) {
-            this.$router.push(`/testcase/${id}`)
+            this.$router.push(`/testcase/${id}`);
         }
     },
 }
 </script>
-
-<style lang="scss" scoped></style>
+  
