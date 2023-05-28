@@ -1,8 +1,8 @@
 <template>
-  <div @click="showLogout" class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-[#33333385]">
+  <div  class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-[#33333385]" @click="showLogout">
     <div class="bg-white p-8 rounded-lg shadow-lg">
-      <div>
-        <img src="../.././assets/CloseCircle.svg" alt="image">
+      <div  class="sm:pr-[300px]" @click="closeModal">
+        <img  class="cursor-pointer pr-4" src="../.././assets/CloseCircle.svg" alt="image">
       </div>
       <div class="pt-6 pl-11 pr-7">
         <img src="../../assets/Logout logo.svg" alt="image">
@@ -22,31 +22,17 @@ import ButtonNo from "./ButtonNo.vue";
 import ButtonYes from './ButtonYes.vue';
 
 export default {
-    
+  components:{
+      ButtonNo, 
+      ButtonYes,
+  },
     methods:{
+      closeModal(){
+        this.$emit("closeModal")
+      },
        showLogout(){
             this.$emit("showLogout")
         }
     },
-    // methods:{
-    //     closePopup(){
-    //         this.logPopup=false;
-    //     }
-    // },
-    // async logout(){
-    //     try{
-    //         const response = await this.$axios.$get('/logout')
-    //         console.log(response)
-    //         this.user=response.data
-    //     }
-    //     catch {
-    //         console.log('logout success!!')
-    //     }
-
-    // },
-    components:{
-        ButtonNo, 
-        ButtonYes,
-    }
 }
 </script>

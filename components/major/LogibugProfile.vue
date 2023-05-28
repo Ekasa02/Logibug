@@ -1,6 +1,6 @@
 <template>
     <div  >
-      <button class="rounded-full overflow-hidden" @click="openProfile">
+      <button class="rounded-full overflow-hidden" @click="showProfile">
         <img class="w-12 h-12  object-cover" :src="items.img_url" alt="Profile Picture">
       </button>
     </div>
@@ -17,8 +17,8 @@ export default{
       this.getProfile();
     },
     methods: {
-    openProfile() {
-      this.$emit('open')
+    showProfile() {
+      this.$emit('showProfile')
     },
     async getProfile() {
             try {
