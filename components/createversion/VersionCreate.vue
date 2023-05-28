@@ -23,7 +23,7 @@
         </div>
     </div>
 </template>
-  
+    
 <script>
 export default {
     props: {
@@ -49,6 +49,7 @@ export default {
             try {
                 const response = await this.$axios.$post('/versions', this.newItem);
                 console.log(response);
+                window.location.reload(); // Force refresh the page
             } catch (error) {
                 console.log(error);
             }
@@ -56,5 +57,4 @@ export default {
         }
     },
 };
-</script>
-  
+</script>  
