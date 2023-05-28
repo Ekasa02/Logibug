@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import DeletePopup from '../projectedit/deleteproject/DeletePopup.vue';
+import DeletePopup from '../version/deleteversion/DeletePopup.vue';
 import VersionEdit from './VersionEdit.vue';
 
 export default {
