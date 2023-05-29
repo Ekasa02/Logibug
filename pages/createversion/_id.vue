@@ -3,23 +3,15 @@
     <VersionHeader />
     <div class="px-[100px] py-[50px]">
       <div class="flex justify-between">
-        <VersionName
-          project-name="Logibug"
-          platform="Mobile"
-          type-test="Manual"
-        />
+        <VersionName project-name="Logibug" platform="Mobile" type-test="Manual" />
         <div class="flex gap-x-4">
           <button
-          class="bg-[#FFFFFF] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500"
-          @click="infoMember"
-          >
+            class="bg-[#FFFFFF] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500"
+            @click="infoMember">
             Member
           </button>
-          <PopupMember v-if="isPopupMember" @infoMember="infoMember" />
-          <button
-          class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded"
-          @click="showCreate"
-          >
+          <PopupMember v-if="isPopupMember" :id="id" @hideMember="hideMember" />
+          <button class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded" @click="showCreate">
             Create version
           </button>
         </div>
@@ -62,6 +54,9 @@ export default {
     },
     infoMember() {
       this.isPopupMember = true
+    },
+    hideMember() {
+      this.isPopupMember = false
     },
     hideCreate() {
       this.isCreateVisible = false

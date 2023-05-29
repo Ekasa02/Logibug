@@ -22,7 +22,7 @@
         </div>
       </li>
     </ul>
-    <TestEdit v-if="isEditVisible" :item="selectedItem" @closePopup="closePopup" />
+    <TestEdit v-if="isEditVisible" :id="id" :item="selectedItem" @closePopup="closePopup" />
   </div>
 </template>
   
@@ -41,12 +41,14 @@ export default {
   data() {
     return {
       isEditVisible: false,
-      selectedItem: null
+      selectedItem: null,
+      id: '',
     };
   },
   methods: {
     editPopup(item) {
       this.selectedItem = item;
+      this.id = item.id;
       this.isEditVisible = true;
     },
     closePopup() {
