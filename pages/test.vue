@@ -1,5 +1,6 @@
 <template>
     <div>
+        <create-result></create-result>
         <!-- <popup-testcase></popup-testcase> -->
         <!-- <popup-log></popup-log> -->
         <!-- <popup-member></popup-member> -->
@@ -10,11 +11,12 @@
         <!-- <popup-deletetest></popup-deletetest> -->
         <!-- <popup-filter></popup-filter> -->
         <!-- <register-success></register-success> -->
-        <detail-test></detail-test>
+        <!-- <detail-test></detail-test> -->
     </div>
 </template>
 
 <script>
+import CreateResult from '../components/detailtestcase/CreateResult.vue'
 // import RegisterSuccess from '../components/loginform/popup/RegisterSuccess.vue';
 // import PopupTestcase from "../components/projectedit/testcase/PopupTestcase.vue";
 // import PopupLog from '../components/loginform/logout/PopupLog.vue';
@@ -25,10 +27,11 @@
 // import PopupeditTest from '../components/projectedit/testcase/edittestcase/PopupeditTest.vue';
 // import PopupDeletetest from '../components/projectedit/testcase/popupdeletetestcase/PopupDeletetest.vue';
 // import PopupFilter from '../components/projectedit/testcase/filtertestase/PopupFilter.vue';
-import DetailTest from '../components/detailtestcase/DetailTest.vue';
+// import DetailTest from '../components/detailtestcase/DetailTest.vue';
 
 export default{
     components:{
+        CreateResult,
         // PopupTestcase,
         // PopupLog,
         // PopupMember,
@@ -39,7 +42,7 @@ export default{
         // PopupDeletetest,
         // PopupFilter,
         // RegisterSuccess,
-        DetailTest,
+        // DetailTest,
     }
 }
 </script>
