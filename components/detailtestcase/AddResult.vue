@@ -11,6 +11,15 @@
         </div>
       </div>
     </div>
+    <CreateResult />
   </div>
 </template>
   
+<script>
+import CreateResult from './CreateResult.vue';
+export default {
+  components: {
+    CreateResult
+  }
+}
+</script>

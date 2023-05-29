@@ -10,7 +10,6 @@
           <p class="pl-40 pt-2">Click to browse files</p>
         </label>
       </div>
-      
     </div>
   </div>
 </template>

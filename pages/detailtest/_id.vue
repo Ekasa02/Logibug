@@ -27,7 +27,7 @@
                         </div>
                         <div class="mt-4">
                             <h1 class="font-semibold text-xl">Test Category</h1>
-                            <div> 
+                            <div>
                                 <button
                                     class="font-Montserrat flex items-centertext-[13px] bg-[#FCD051] text-white leading-[18px] py-2 px-5 rounded mt-2">
                                     <img class="pr-1 h-4 my-auto" src="../../components/assets/PlusWhite.svg" />
