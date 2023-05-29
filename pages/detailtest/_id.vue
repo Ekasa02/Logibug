@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <AddResult />
+                        <AddResult :id="45"/>
                     </div>
                 </div>
             </div>

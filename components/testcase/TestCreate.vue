@@ -128,6 +128,7 @@ export default {
             try {
                 const response = await this.$axios.$post('/test_cases', this.newItem);
                 console.log(response);
+                window.location.reload();
                 // Handle the response, show success message, etc.
             } catch (error) {
                 console.log(error);
