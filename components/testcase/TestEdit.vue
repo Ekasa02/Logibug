@@ -46,7 +46,7 @@
                 class="hover:opacity-80 text-white font-bold py-2 px-2.5 rounded-xl ml-3 border border-gray-300"
                 @click="showScenario"
               >
-                <img src="./svg/plus.svg" alt="Plus Icon" class="h-5 w-5" />
+                <img src="./svg/Plus.svg" alt="Plus Icon" class="h-5 w-5" />
               </div>
             </div>
           </div>
@@ -82,14 +82,11 @@
             <label class="block font-bold text-[14px] mb-2" for="test-step">
               Test steps
             </label>
-            <textarea
-              id="test-step"
-              v-model="editedItem.test_step"
+            <textarea id="test-step" v-model="editedItem.test_step"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               rows="4"
               placeholder="Steps"
-            >
-            </textarea>
+            ></textarea>
           </div>
           <div class="pt-[15px] relative">
             <label class="block font-bold text-[14px] mb-2" for="expectation">
