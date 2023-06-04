@@ -7,7 +7,7 @@
                 <button class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded" @click="showCreate">Create test
                     case</button>
             </div>
-            <TestCreate v-if="isCreateVisible" :id="id" :scenario-id="items[0].scenario_id" @hideCreate="hideCreate" />
+            <TestCreate v-if="isCreateVisible" :id="id" @hideCreate="hideCreate" />
             <TestList :items="items" />
         </div>
     </div>
@@ -30,6 +30,7 @@ export default {
         }
     },
     mounted() {
+        console.log("testing")
         this.getTestcase();
     },
     methods: {

@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[400px] w-[70%] mt-[20px] bg-cover bg-center ml-28 hidden md:block">
+    <div class="h-[400px] mt-[20px] bg-cover bg-center mx-auto hidden md:block">
         <img src="../../assets/Landingpage.svg"/>
     </div>
 </template>

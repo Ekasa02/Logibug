@@ -1,11 +1,11 @@
 <template>
   <div class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex items-center sm:justify-center font-Monserrat">
-    <div>
+    <div @click="hideMember">
       <div class="bg-white rounded-lg shadow-lg">
         <div class="py-2">
           <div class="flex px-5">
             <h1 class="font-bold text-2xl sm:pr-[300px]">Member</h1>
-            <img src="../../createproject/svg/CloseCircle.svg" class="hover:cursor-pointer" @click="hideMember">
+            <img src="../../createproject/svg/CloseCircle.svg" class="hover:cursor-pointer" >
           </div>
         </div>
         <hr class="border-gray-300 w-full">
@@ -45,6 +45,7 @@ export default {
   },
   data() {
     return {
+      
       items: []
     }
   },
@@ -52,6 +53,7 @@ export default {
     this.getMember();
   },
   methods: {
+    
     hideMember() {
       this.$emit("hideMember")
     },

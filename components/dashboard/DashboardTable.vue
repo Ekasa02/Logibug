@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="max-h-[35vh] overflow-y-auto">
+    <div class="max-h-[43vh] overflow-y-auto">
       <ul class="list-group h-full py-4">
         <li v-for="item in items" :key="item.id" class="list-group-item mb-2">
           <div class="flex w-full justify-between border-b border-solid py-2 hover:cursor-pointer"
@@ -9,17 +9,11 @@
               <div class="py-2">
                 <img src="./svg/List.svg" alt="List Icon" class="h-full">
               </div>
-              <div class="flex flex-col ml-3 items">
+              <div class="flex flex-col ml-3 gap-y-1 items">
                 <h5 v-if="item.name" class="text-sm font-semibold text-gray-700">
-                  <span class="text-gray-700 font-semibold text-sm">{{ item.name
-                  }}</span>
+                  <span class="text-gray-700 font-semibold text-sm">{{ item.name }}</span>
                 </h5>
-                <div class="flex gap-x-4 items-center">
-                  <h5 class="text-gray-700 font-sm">
-                    <span v-if="item.description" :id="'project-version-' + item.id" class="text-gray-400 font-semibold">
-                      {{ item.description }}
-                    </span>
-                  </h5>
+                <div class="flex gap-x-4 gap-y-2items-center">
                   <div v-if="item.platform === 'mobile'" class="text-gray-300">
                     <div>
                       <img src="./svg/Mobile.svg" alt="List Icon" class="h-full">
@@ -33,7 +27,8 @@
                   <div v-if="item.type_test === 'manual'" class="rounded-lg border-gray-300 border-2 border-solid px-4">
                     <p class="text-gray-700">Manual</p>
                   </div>
-                  <div v-if="item.type_test === 'automatic'"
+                  <div
+                    v-if="item.type_test === 'automatic'"
                     class="rounded-lg border-gray-300 border-2 border-solid px-4">
                     <p class="text-gray-700 text-sm">Automatic</p>
                   </div>
