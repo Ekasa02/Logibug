@@ -22,11 +22,11 @@
                     </div>
                 </div>
             </form>
-            <div class="mt-[25px]">
-                <p class="block font-Montserrat font-bold text-[14px] mb-2">Scenario list</p>
-                <ul class="list-group h-full mt-[50px]">
+            <p class="block font-Montserrat font-bold text-[14px] mb-2 mt-[25px]">Scenario list</p>
+            <div class="max-h-[40vh] overflow-y-auto">
+                <ul class="list-group h-full mt-[5px]">
                     <li v-for="item in items" :key="item.id" class="list-group-item mb-2">
-                        <div class="border-b border-gray-200 flex justify-between pb-[20px]">
+                        <div class="border-b border-gray-200 flex justify-between pb-[10px] mr-[15px]">
                             <div class="flex">
                                 <h1 class="font-semibold text-xl">{{ item.name }}</h1>
                             </div>
@@ -60,7 +60,7 @@ export default {
             projectId: '',
             item: {
                 name: '',
-                project_id: '122',
+                project_id: '215',
             }
         };
     },
@@ -73,7 +73,7 @@ export default {
         },
         async getScenario() {
             try {
-                const response = await this.$axios.$get(`/scenarios/?project_id=122`);
+                const response = await this.$axios.$get(`/scenarios/?project_id=215`);
                 console.log(response);
                 this.items = response.data;
             } catch (e) {
@@ -84,7 +84,7 @@ export default {
             try {
                 const response = await this.$axios.$post('/scenarios', this.item);
                 console.log(response);
-                // window.location.reload(); // Force refresh the page
+                this.getScenario(); // Force refresh the page
             } catch (error) {
                 console.log(error);
             }

@@ -10,7 +10,7 @@
             </div>
             <div class="flex pt-[30px] justify-center items-center gap-x-5">
                 <button
-                    class="bg-[#FFFFFF] font-['Montserrat'] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500">
+                    class="bg-[#FFFFFF] font-['Montserrat'] text-[#554AF0] font-bold py-2 px-4 rounded border border-[#554AF0] hover:text-white hover:bg-red-500" @click="deleteVersion">
                     Cancel
                 </button>
                 <button class="font-['Montserrat'] bg-[#554AF0] text-white font-bold py-2 px-4 rounded" @click="deleteItem">

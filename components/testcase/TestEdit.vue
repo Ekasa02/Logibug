@@ -74,11 +74,11 @@
                             class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             type="text" placeholder="Expectation">
                     </div>
-                    <div class="pt-[50px]">
+                    <div class="pt-[50px] float-right">
                         <button
-                            class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded"
+                            class="bg-[#554AF0] text-white font-bold py-2 px-6 rounded"
                             type="submit">
-                            Create
+                            Edit
                         </button>
                     </div>
                 </form>
