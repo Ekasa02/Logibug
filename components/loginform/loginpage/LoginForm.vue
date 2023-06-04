@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-[30px]">
+    <div class="mt-[30px] font-montserrat">
         <form class="max-w-md" @submit.prevent="userLogin">
             <div class="relative mb-4">
                 <input id="email" v-model="email" type="email" :class="[

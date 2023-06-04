@@ -40,7 +40,6 @@ export default {
         };
     },
     mounted() {
-        // Set the initial value of the input field to the received item's name
         this.editedItem.name = this.item.name;
     },
     methods: {
@@ -53,13 +52,10 @@ export default {
                     name: this.editedItem.name,
                 });
                 console.log(response.data);
-                // Handle success, such as displaying a success message or redirecting to another page
-
-                // Emit an event to notify the parent component about the successful edit
+                window.location.reload();
                 this.$emit('versionEdited', response.data);
             } catch (error) {
                 console.error(error);
-                // Handle error, such as displaying an error message to the user
             }
         }
     },
