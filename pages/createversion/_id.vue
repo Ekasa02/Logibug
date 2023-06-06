@@ -45,8 +45,9 @@ export default {
       isPopupMember: false,
     }
   },
-  mounted() {
-    this.getVersion()
+  async created() {
+    console.log("test")
+    await this.getVersion()
   },
   methods: {
     showCreate() {
