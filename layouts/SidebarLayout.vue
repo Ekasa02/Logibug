@@ -27,7 +27,7 @@
                             <img src="./SidebarIcons/Audit.svg" alt="Issues Icon" class="w-8 h-8 inline-block"
                                 style="filter: invert(69%) sepia(3%) saturate(22%) hue-rotate(357deg) brightness(87%) contrast(94%)"
                                 :style="($route.path === '/issues') ? 'filter: invert(26%) sepia(91%) saturate(3908%) hue-rotate(240deg) brightness(97%) contrast(95%);' : ''" />
-                            <span v-show="showLabels">Issues</span>
+                            <span v-show="showLabels">Report</span>
                         </NuxtLink>
                     </li>
                     <li :class="{ 'text-gray-500': $route.path === '/report' }" class="group side-list flex justify-center">
@@ -35,7 +35,7 @@
                             <img src="./SidebarIcons/Bell.svg" alt="Issues Icon" class="w-8 h-8 inline-block"
                                 style="filter: invert(69%) sepia(3%) saturate(22%) hue-rotate(357deg) brightness(87%) contrast(94%)"
                                 :style="($route.path === '/reports') ? 'filter: invert(26%) sepia(91%) saturate(3908%) hue-rotate(240deg) brightness(97%) contrast(95%);' : ''" />
-                            <span v-show="showLabels">Report</span>
+                            <span v-show="showLabels">Notif</span>
                         </NuxtLink>
                     </li>
                 </ul>
