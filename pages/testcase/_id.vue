@@ -8,8 +8,8 @@
                 <button class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded" @click="showCreate">Create test
                     case</button>
             </div>
-            <TestCreate v-if="isCreateVisible" :id="id" @hideCreate="hideCreate" />
-            <TestList :items="items" />
+            <TestCreate v-if="isCreateVisible" :id="id" :project-id="projectId" @hideCreate="hideCreate" />
+            <TestList :items="items" :project-id="projectId" />
         </div>
     </div>
 </template>
@@ -30,12 +30,13 @@ export default {
             isCreateVisible: false,
             isProfileVisible:false,
             id: this.$route.params.id,
-            items: []
+            items: [],
+            projectId: '',
         }
     },
     mounted() {
-        console.log("testing")
         this.getTestcase();
+        this.getProjectid();
     },
     methods: {
         showCreate() {
@@ -49,14 +50,23 @@ export default {
         },
         async getTestcase() {
             try {
-                const response = await this.$axios.$get(`/test_cases/?version_id=${this.id}`)
+                const response = await this.$axios.$get(`/versions/${this.id}`)
                 console.log(response)
-                this.items = response.data
-                console.log(this.items[0].scenario_id)
+                this.projectId = response.data[0].project_id
+                console.log(this.projectId)
             } catch (e) {
                 console.log(e)
             }
-        }
+        },
+        async getProjectid() {
+            try {
+                const response = await this.$axios.$get(`/test_cases/?version_id=${this.id}`)
+                console.log(response)
+                this.items = response.data
+            } catch (e) {
+                console.log(e)
+            }
+        },       
     },
 }
 </script>

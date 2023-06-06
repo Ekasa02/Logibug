@@ -51,8 +51,9 @@ export default {
       isProfileVisible:false
     }
   },
-  mounted() {
-    this.getVersion()
+  async created() {
+    console.log("test")
+    await this.getVersion()
   },
   methods: {
     closeInvite(){
