@@ -34,7 +34,6 @@
                                 <img src="./svg/Plus.svg" alt="Plus Icon" class="h-5 w-5">
                             </div>
                         </div>
-
                     </div>
                     <div class="pt-[15px] relative">
                         <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="test-category">
@@ -83,7 +82,7 @@
                 </form>
             </div>
         </div>
-        <TestScenario v-if="isScenarioVisible" :id="id" @hideScenario="hideScenario" />
+        <TestScenario v-if="isScenarioVisible" :id="id" :project-id="projectId" @hideScenario="hideScenario" />
     </div>
 </template>
   
@@ -94,6 +93,10 @@ export default {
     components: { TestScenario },
     props: {
         id: {
+            type: String,
+            required: true
+        },
+        projectId: {
             type: String,
             required: true
         },
@@ -122,13 +125,14 @@ export default {
         },
         hideScenario() {
             this.isScenarioVisible = false;
+            this.getScenario();
         },
         closeModal() {
             this.$emit("hideCreate");
         },
         async getScenario() {
             try {
-                const response = await this.$axios.$get(`/scenarios/?project_id=215`);
+                const response = await this.$axios.$get(`/scenarios/?project_id=${this.projectId}`);
                 console.log(response);
                 this.scenario = response.data;
             } catch (e) {
@@ -137,7 +141,6 @@ export default {
         },
         async postProject() {
             this.newItem.version_id = this.id;
-            this.newItem.scenario_id = this.scenario.id
             try {
                 const response = await this.$axios.$post('/test_cases', this.newItem);
                 console.log(response);

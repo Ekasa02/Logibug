@@ -23,7 +23,7 @@
         </div>
       </li>
     </ul>
-    <TestEdit v-if="isEditVisible" :id="id" :item="selectedItem" @closePopup="closePopup" />
+    <TestEdit v-if="isEditVisible" :id="id" :item="selectedItem" :project-id="projectId" @closePopup="closePopup" />
   </div>
 </template>
 
@@ -38,7 +38,11 @@ export default {
     items: {
       type: Array,
       default: () => []
-    }
+    },
+    projectId: {
+      type: String,
+      required: true
+    },
   },
   data() {
     return {
@@ -47,6 +51,16 @@ export default {
       id: '',
       scenarioMap: {} // Map to store scenario names
     };
+  },
+  computed: {
+    getScenarioName() {
+      return (scenarioId) => {
+        if (!this.scenarioMap[scenarioId]) {
+          this.fetchScenarioName(scenarioId);
+        }
+        return this.scenarioMap[scenarioId] || ''; // Return scenario name from the map or empty string
+      };
+    }
   },
   methods: {
     getCategoryColor(category) {
@@ -78,15 +92,5 @@ export default {
       this.$router.push(`/detailtest/${id}`);
     }
   },
-  computed: {
-    getScenarioName() {
-      return (scenarioId) => {
-        if (!this.scenarioMap[scenarioId]) {
-          this.fetchScenarioName(scenarioId);
-        }
-        return this.scenarioMap[scenarioId] || ''; // Return scenario name from the map or empty string
-      };
-    }
-  }
 };
 </script>

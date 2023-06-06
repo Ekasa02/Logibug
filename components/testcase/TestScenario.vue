@@ -53,14 +53,17 @@ export default {
             type: String,
             required: true
         },
+        projectId: {
+            type: String,
+            required: true
+        },
     },
     data() {
         return {
             items: [],
-            projectId: '',
             item: {
                 name: '',
-                project_id: '215',
+                project_id: '',
             }
         };
     },
@@ -73,7 +76,7 @@ export default {
         },
         async getScenario() {
             try {
-                const response = await this.$axios.$get(`/scenarios/?project_id=215`);
+                const response = await this.$axios.$get(`/scenarios/?project_id=${this.projectId}`);
                 console.log(response);
                 this.items = response.data;
             } catch (e) {
@@ -82,6 +85,7 @@ export default {
         },
         async postScenario() {
             try {
+                this.item.project_id = this.projectId
                 const response = await this.$axios.$post('/scenarios', this.item);
                 console.log(response);
                 this.getScenario(); // Force refresh the page

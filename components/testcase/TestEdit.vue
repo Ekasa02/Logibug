@@ -1,16 +1,9 @@
 <template>
   <div class="fixed inset-0 flex items-center justify-center font-Montserrat">
-    <div
-      class="bg-white p-8 rounded-lg shadow-lg w-[35%] max-h-[80vh] overflow-hidden"
-    >
+    <div class="bg-white p-8 rounded-lg shadow-lg w-[35%] max-h-[80vh] overflow-hidden">
       <div class="flex justify-between">
         <h1 class="font-bold text-2xl pr-12">Edit test case</h1>
-        <img
-          alt="Close Icon"
-          src="../createversion/svg/CloseCircle.svg"
-          class="cursor-pointer"
-          @click="closeModal"
-        />
+        <img alt="Close Icon" src="../createversion/svg/CloseCircle.svg" class="cursor-pointer" @click="closeModal" />
       </div>
       <hr class="border-gray-300 my-4 w-full" />
       <div class="overflow-y-auto max-h-[60vh] pr-5">
@@ -19,33 +12,25 @@
             <label class="block font-bold text-[14px] mb-2" for="testcase">
               Test case
             </label>
-            <input
-              id="testcase"
-              v-model="editedItem.testcase"
+            <input id="testcase" v-model="editedItem.testcase"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              placeholder="Test case"
-            />
+              type="text" placeholder="Test case" />
           </div>
           <div class="relative pt-[15px]">
-            <label
-              class="block font-Montserrat font-bold text-[14px] mb-2"
-              for="scenario"
-            >
+            <label class="block font-Montserrat font-bold text-[14px] mb-2" for="scenario">
               Scenario
             </label>
             <div class="flex items-center">
-              <input
-                id="scenario"
+              <select id="scenario"
                 class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                type="text"
-                placeholder="Scenario"
-                disabled
-              />
-              <div
-                class="hover:opacity-80 text-white font-bold py-2 px-2.5 rounded-xl ml-3 border border-gray-300"
-                @click="showScenario"
-              >
+                v-model="editedItem.scenario_id">
+                <option value="" disabled>Select Scenario</option>
+                <option v-for="scenarioItem in scenario" :value="scenarioItem.id" :key="scenarioItem.id">
+                  {{ scenarioItem.name }}
+                </option>
+              </select>
+              <div class="hover:opacity-80 text-white font-bold py-2 px-2.5 rounded-xl ml-3 border border-gray-300"
+                @click="showScenario">
                 <img src="./svg/Plus.svg" alt="Plus Icon" class="h-5 w-5" />
               </div>
             </div>
@@ -55,11 +40,8 @@
               Test category
             </label>
             <div class="flex items-center">
-              <select
-                id="test-category"
-                v-model="editedItem.test_category"
-                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              >
+              <select id="test-category" v-model="editedItem.test_category"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 <option value="" disabled selected>Test category</option>
                 <option value="positif">Positive</option>
                 <option value="negatif">Negative</option>
@@ -70,13 +52,9 @@
             <label class="block font-bold text-[14px] mb-2" for="pre-condition">
               Pre condition
             </label>
-            <input
-              id="pre-condition"
-              v-model="editedItem.pre_condition"
+            <input id="pre-condition" v-model="editedItem.pre_condition"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              placeholder="Pre condition"
-            />
+              type="text" placeholder="Pre condition" />
           </div>
           <div class="pt-[15px] relative">
             <label class="block font-bold text-[14px] mb-2" for="test-step">
@@ -84,38 +62,25 @@
             </label>
             <textarea id="test-step" v-model="editedItem.test_step"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              rows="4"
-              placeholder="Steps"
-            ></textarea>
+              rows="4" placeholder="Steps"></textarea>
           </div>
           <div class="pt-[15px] relative">
             <label class="block font-bold text-[14px] mb-2" for="expectation">
               Expectation
             </label>
-            <input
-              id="expectation"
-              v-model="editedItem.expectation"
+            <input id="expectation" v-model="editedItem.expectation"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              placeholder="Expectation"
-            />
+              type="text" placeholder="Expectation" />
           </div>
           <div class="pt-[50px]">
-            <button
-              class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded"
-              type="submit"
-            >
+            <button class="bg-[#554AF0] text-white font-bold py-2 px-4 rounded" type="submit">
               Create
             </button>
           </div>
         </form>
       </div>
     </div>
-    <TestScenario
-      v-if="isScenarioVisible"
-      :id="id"
-      @hideScenario="hideScenario"
-    />
+    <TestScenario v-if="isScenarioVisible" :id="id" @hideScenario="hideScenario" />
   </div>
 </template>
 
@@ -132,6 +97,10 @@ export default {
       type: Number,
       required: true,
     },
+    projectId: {
+      type: String,
+      required: true,
+    }
   },
   data() {
     return {
@@ -141,6 +110,7 @@ export default {
         pre_condition: '',
         test_step: '',
         expectation: '',
+        scenario: []
       },
     }
   },
@@ -150,6 +120,7 @@ export default {
     this.editedItem.test_step = this.item.test_step
     this.editedItem.expectation = this.item.expectation
     this.editedItem.test_category = this.item.test_category
+    this.getScenario()
   },
   methods: {
     showScenario() {
@@ -160,6 +131,15 @@ export default {
     },
     closeModal() {
       this.$emit('closePopup')
+    },
+    async getScenario() {
+      try {
+        const response = await this.$axios.$get(`/scenarios/?project_id=${this.projectId}`);
+        console.log(response);
+        this.scenario = response.data;
+      } catch (e) {
+        console.log(e);
+      }
     },
     async editProject() {
       try {
