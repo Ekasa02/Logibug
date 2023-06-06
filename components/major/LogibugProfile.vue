@@ -10,7 +10,8 @@
 export default{
   data(){
     return{
-      items:[]
+      items:[],
+      showPopup:false
     }
   },
   mounted (){

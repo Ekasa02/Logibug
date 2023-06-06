@@ -1,6 +1,7 @@
 <template>
     <div>
-        <TestHeader />
+        <TestHeader @showProfile="showProfile"/>
+        <DashboardPopup v-if="isProfileVisible" />
         <div class="px-[100px] py-[50px]">
             <div class="flex justify-between">
                 <TestName test-name="LogiBug" />
@@ -14,17 +15,20 @@
 </template>
 
 <script>
+
 import TestHeader from '../../components/testcase/TestHeader.vue';
 import TestName from '../../components/testcase/TestName.vue';
 import TestList from '../../components/testcase/TestList.vue';
 import TestCreate from '../../components/testcase/TestCreate.vue';
+import DashboardPopup from '../../components/dashboard/DashboardPopup.vue';
 
 export default {
-    components: { TestHeader, TestName, TestList, TestCreate },
+    components: { TestHeader, TestName, TestList, TestCreate, DashboardPopup },
     layout: "SidebarLayout",
     data() {
         return {
             isCreateVisible: false,
+            isProfileVisible:false,
             id: this.$route.params.id,
             items: []
         }
@@ -39,6 +43,9 @@ export default {
         },
         hideCreate() {
             this.isCreateVisible = false;
+        },
+        showProfile() {
+            this.isProfileVisible = !this.isProfileVisible;
         },
         async getTestcase() {
             try {
