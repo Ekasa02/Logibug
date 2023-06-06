@@ -88,7 +88,7 @@ export default {
   },
   data() {
     return {
-      PopupMember: false,
+      
       isPopupMember:false,
       items: {
         email: '',
@@ -105,7 +105,7 @@ export default {
       this.$emit('closeInvite')
     },
     closeMember(){
-      this.isPopupMember=false
+      this.isPopupMember=true
     },
     
     async postMember() {

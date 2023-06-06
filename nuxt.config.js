@@ -42,7 +42,7 @@ export default {
   ],
 
   axios: {
-    baseURL: 'https://logibugv2.fly.dev/api/v1'
+    baseURL: 'https://logibugv5.fly.dev/api/v1'
   },
 
   generate: {

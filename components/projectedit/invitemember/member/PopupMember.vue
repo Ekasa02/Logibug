@@ -5,7 +5,7 @@
         <div class="py-2">
           <div class="flex px-5">
             <h1 class="font-bold text-2xl sm:pr-[300px]">Member</h1>
-            <img src="../../createproject/svg/CloseCircle.svg" class="hover:cursor-pointer" >
+            <img src="../../createproject/svg/CloseCircle.svg" class="hover:cursor-pointer" @click="closeMember" >
           </div>
         </div>
         <hr class="border-gray-300 w-full">
