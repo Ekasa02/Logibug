@@ -101,7 +101,9 @@ export default {
       // Additional logic or actions after closing the edit popup
     },
     toCreateVersion(id) {
-      this.$router.push(`/createversion/${id}`);
+      this.$emit("createVersion", `/createversion/${id}`);
+      // this.$router.push(`/createversion/${id}`);
+      // window.location.reload();
     }
   },
   components: { PopupEdit, DashboardDelete }
