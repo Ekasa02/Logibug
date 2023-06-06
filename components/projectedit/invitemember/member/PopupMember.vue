@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex items-center sm:justify-center font-Monserrat">
-    <div @click="hideMember">
+  <div class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex items-center sm:justify-center font-Monserrat" >
+    <div >
       <div class="bg-white rounded-lg shadow-lg">
         <div class="py-2">
           <div class="flex px-5">
@@ -54,8 +54,8 @@ export default {
   },
   methods: {
     
-    hideMember() {
-      this.$emit("hideMember")
+    closeMember() {
+      this.$emit("closeMember")
     },
     async getMember() {
       try {
