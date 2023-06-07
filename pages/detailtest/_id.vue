@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <AddResult :id="45" />
+                        <AddResult :test-id="itemId" />
                     </div>
                 </div>
             </div>
@@ -67,7 +67,8 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            items: []
+            items: [],
+            itemId: ''
         };
     },
     mounted() {
@@ -79,6 +80,7 @@ export default {
                 const response = await this.$axios.$get(`/test_cases/?version_id=${this.id}`);
                 console.log(response);
                 this.items = response.data;
+                this.itemId = response.data[0].id;
             } catch (e) {
                 console.log(e);
             }
