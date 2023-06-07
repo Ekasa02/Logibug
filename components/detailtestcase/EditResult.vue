@@ -1,34 +1,33 @@
 <template>
-  <div
-    class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex sm:items-center sm:justify-center font-monserrat']">
+  <div class="bg-[#33333385] fixed top-0 left-0 right-0 bottom-0 flex sm:items-center sm:justify-center font-montserrat">
     <div>
       <div class="bg-white rounded-lg shadow-lg">
         <div class="pt-4">
           <div class="flex">
-            <h1 class="font-['Montserrat'] font-bold text-2xl sm:pr-[300px] pl-5">Add result</h1>
-            <img src="./svg/CloseCircle.svg" class="pr-4" @click="hideCreate" />
+            <h1 class="font-montserrat font-bold text-2xl sm:pr-[300px] pl-5">Edit result</h1>
+            <img src="./svg/CloseCircle.svg" class="pr-4" @click="hideEdit" />
           </div>
           <hr class="border-gray-300 my-4 w-full" />
         </div>
         <div class="pl-5 pr-5">
           <div class="relative max-h-[60vh] overflow-y-auto">
-            <form @submit.prevent="postResult">
+            <form @submit.prevent="updateResult">
               <div class="pt-[15px] relative">
-                <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="Actually">Actually</label>
-                <input v-model="form.actual" id="Actually"
+                <label class="block font-montserrat font-bold text-[14px] mb-2" for="Actually">Actually</label>
+                <input v-model="editedActual" id="Actually"
                   class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text" placeholder="Actually" />
               </div>
               <div class="pt-[15px] relative">
-                <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="note">Note</label>
-                <textarea v-model="form.note" id="note"
+                <label class="block font-montserrat font-bold text-[14px] mb-2" for="note">Note</label>
+                <textarea v-model="editedNote" id="note"
                   class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="Note"></textarea>
               </div>
               <div class="pt-[15px] relative">
-                <label class="block font-['Montserrat'] font-bold text-[14px] mb-2" for="project-name">Result
+                <label class="block font-montserrat font-bold text-[14px] mb-2" for="project-name">Result
                   state</label>
-                <select id="project-name" v-model="form.status" required
+                <select id="project-name" v-model="editedStatus" required
                   class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                   <option value="" disabled selected>Result state</option>
                   <option value="pass">Pass</option>
@@ -36,9 +35,9 @@
                 </select>
               </div>
               <div class="pt-[15px] relative">
-                <select id="project-name" v-model="form.priority" required
+                <select id="project-name" v-model="editedPriority" required
                   class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  :disabled="form.status === 'pass'">
+                  :disabled="editedStatus === 'pass'">
                   <option value="" disabled selected>Priority</option>
                   <option value="urgent">Urgent</option>
                   <option value="high">High</option>
@@ -47,9 +46,9 @@
                 </select>
               </div>
               <div class="pt-[15px] relative">
-                <select id="project-name" v-model="form.severity" required
+                <select id="project-name" v-model="editedSeverity" required
                   class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  :disabled="form.status === 'pass'">
+                  :disabled="editedStatus === 'pass'">
                   <option value="" disabled selected>Severity</option>
                   <option value="critical">Critical</option>
                   <option value="major">Major</option>
@@ -57,8 +56,7 @@
                   <option value="low">Low</option>
                 </select>
               </div>
-
-              <div class="pt-[15px] font-['Montserrat']">
+              <div class="pt-[15px] font-montserrat">
                 <h1 class="block font-bold text-[14px] mb-2">Attachment</h1>
                 <p class="pb-2">Max file size is 2mb. Supported files are jpg, jpeg, png</p>
                 <div class="rounded p-4" style="border: dashed 1px #c9c5c5">
@@ -71,8 +69,7 @@
               </div>
               <div class="pt-4 pb-4">
                 <div class="pt-9 pb-10">
-                  <button
-                    class="font-['Montserrat'] text-white bg-[#554AF0] font-semibold py-2 px-5 rounded">Save</button>
+                  <button class="font-montserrat text-white bg-[#554AF0] font-semibold py-2 px-5 rounded">Update</button>
                 </div>
               </div>
             </form>
@@ -86,48 +83,46 @@
 <script>
 export default {
   props: {
-    id: {
-      type: Number,
+    items: {
+      type: Array,
       required: true
     }
   },
   data() {
     return {
-      form: {
-        actual: '',
-        note: '',
-        status: '',
-        priority: '',
-        severity: '',
-        img_url: '',
-        test_case_id: '',
-      }
+      editedActual: '',
+      editedNote: '',
+      editedStatus: '',
+      editedPriority: '',
+      editedSeverity: ''
     };
+  },
+  mounted() {
+    const item = this.items;
+    this.editedActual = item.actual;
+    this.editedNote = item.note;
+    this.editedStatus = item.status;
+    this.editedPriority = item.priority;
+    this.editedSeverity = item.severity;
   },
   methods: {
     handleFile(e) {
-      this.form.img_url = e.target.files[0]
+      // Handle file upload
     },
-    async postResult() {
+    async updateResult() {
       try {
-        this.form.test_case_id = this.id;
-        const formData = new FormData()
-        formData.append("actual", this.form.actual)
-        formData.append("test_case_id", this.form.test_case_id)
-        formData.append("note", this.form.note)
-        formData.append("status", this.form.status)
-        formData.append("priority", this.form.priority)
-        formData.append("severity", this.form.severity)
-        formData.append("img_url", this.form.img_url)
-        const response = await this.$axios.$post('/results', formData);
+        const updatedItem = {
+          id: this.items.id,
+        };
+        const response = await this.$axios.$put(`/results/${updatedItem.id}`, updatedItem);
         console.log(response);
         // window.location.reload(); // Force refresh the page
       } catch (error) {
         console.log(error);
       }
     },
-    hideCreate() {
-      this.$emit("hideCreate")
+    hideEdit() {
+      this.$emit("hideEdit");
     }
   }
 };

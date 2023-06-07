@@ -6,14 +6,13 @@
                 <img src="../createversion/svg/CloseCircle.svg" class="cursor-pointer" alt="Close Icon" @click="closeModal">
             </div>
             <hr class="border-gray-300 my-4 w-full">
-            <form @submit.prevent="postProject">
+            <form @submit.prevent="postScenario">
                 <div class="relative pt-[15px]">
                     <label class="block font-Montserrat font-bold text-[14px] mb-2" for="scenario">
                         Add Scenario
                     </label>
                     <div class="flex items-center">
-                        <input
-                            id="scenario"
+                        <input id="scenario" v-model="item.name"
                             class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             type="text" placeholder="Scenario" />
                         <button
@@ -23,11 +22,11 @@
                     </div>
                 </div>
             </form>
-            <div class="mt-[25px]">
-                <p class="block font-Montserrat font-bold text-[14px] mb-2">Scenario list</p>
-                <ul class="list-group h-full mt-[50px]">
+            <p class="block font-Montserrat font-bold text-[14px] mb-2 mt-[25px]">Scenario list</p>
+            <div class="max-h-[40vh] overflow-y-auto">
+                <ul class="list-group h-full mt-[5px]">
                     <li v-for="item in items" :key="item.id" class="list-group-item mb-2">
-                        <div class="border-b border-gray-200 flex justify-between pb-[20px]">
+                        <div class="border-b border-gray-200 flex justify-between pb-[10px] mr-[15px]">
                             <div class="flex">
                                 <h1 class="font-semibold text-xl">{{ item.name }}</h1>
                             </div>
@@ -54,11 +53,18 @@ export default {
             type: String,
             required: true
         },
+        projectId: {
+            type: String,
+            required: true
+        },
     },
     data() {
         return {
             items: [],
-            projectId: '',
+            item: {
+                name: '',
+                project_id: '',
+            }
         };
     },
     mounted() {
@@ -70,12 +76,23 @@ export default {
         },
         async getScenario() {
             try {
-                const response = await this.$axios.$get(`/scenarios/?project_id=122`);
+                const response = await this.$axios.$get(`/scenarios/?project_id=${this.projectId}`);
                 console.log(response);
                 this.items = response.data;
             } catch (e) {
                 console.log(e);
             }
+        },
+        async postScenario() {
+            try {
+                this.item.project_id = this.projectId
+                const response = await this.$axios.$post('/scenarios', this.item);
+                console.log(response);
+                this.getScenario(); // Force refresh the page
+            } catch (error) {
+                console.log(error);
+            }
+            this.item.name = ''; // Update the property name
         }
     }
 };

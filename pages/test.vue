@@ -1,6 +1,6 @@
 <template>
     <div>
-        <create-result></create-result>
+        <!-- <create-result></create-result> -->
         <!-- <popup-testcase></popup-testcase> -->
         <!-- <popup-log></popup-log> -->
         <!-- <popup-member></popup-member> -->
@@ -12,11 +12,15 @@
         <!-- <popup-filter></popup-filter> -->
         <!-- <register-success></register-success> -->
         <!-- <detail-test></detail-test> -->
+        <!-- <popup-invite></popup-invite> -->
+        <!-- <projects-response></projects-response> -->
+        <report-test></report-test>
     </div>
 </template>
 
 <script>
-import CreateResult from '../components/detailtestcase/CreateResult.vue'
+// import CreateResult from '../components/detailtestcase/CreateResult.vue'
+// import PopupInvite from '../components/projectedit/invitemember/PopupInvite.vue'
 // import RegisterSuccess from '../components/loginform/popup/RegisterSuccess.vue';
 // import PopupTestcase from "../components/projectedit/testcase/PopupTestcase.vue";
 // import PopupLog from '../components/loginform/logout/PopupLog.vue';
@@ -28,13 +32,17 @@ import CreateResult from '../components/detailtestcase/CreateResult.vue'
 // import PopupDeletetest from '../components/projectedit/testcase/popupdeletetestcase/PopupDeletetest.vue';
 // import PopupFilter from '../components/projectedit/testcase/filtertestase/PopupFilter.vue';
 // import DetailTest from '../components/detailtestcase/DetailTest.vue';
+// import ProjectsResponse from '../components/apitesting/ProjectsResponse.vue';
+import ReportTest from "../components/report/ReportTest.vue";
 
 export default{
     components:{
-        CreateResult,
+        // CreateResult,
+        // PopupInvite,
         // PopupTestcase,
         // PopupLog,
         // PopupMember,
+        // ProjectsResponse,
         // PopupAddresult,
         // PopupCreate,
         // PopupEdit,
@@ -43,6 +51,7 @@ export default{
         // PopupFilter,
         // RegisterSuccess,
         // DetailTest,
+        ReportTest,
     }
 }
 </script>

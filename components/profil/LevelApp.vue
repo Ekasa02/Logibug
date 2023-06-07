@@ -1,8 +1,7 @@
 <template>
   <div>
     <div
-      class="mx-5 rounded-[28px] px-6 py-2 w-[120px] flex items-center justify-center mt-3 text-white font-semibold text-sm bg-[linear-gradient(143.07deg, #5883D6 0%, #C2CFFB 98.57%)]"
-    >
+      class="mx-5 rounded-[28px] px-6 py-2 w-[120px] flex items-center justify-center mt-3 text-white font-semibold text-sm bg-[linear-gradient(143.07deg, #5883D6 0%, #C2CFFB 98.57%)]">
       <h1>Beginner</h1>
     </div>
     <div class="px-5">
@@ -29,20 +28,20 @@
       </div>
       <hr class="border-gray-300 my-4 w-full" />
       <div class="flex text-[16px] pb-5 px-5">
-          <img src="../assets/Logout.svg" />
-          <button @click="showLogout" class="pl-3" >Log Out</button>
+        <img src="../assets/Logout.svg" />
+        <button @click="showLogout" class="pl-3">Log Out</button>
       </div>
     </div>
-    <PopupLog v-if="isPopupLogout" @showLogout="showLogout"/>
+    <PopupLog v-if="isPopupLogout" @showLogout="showLogout" />
   </div>
 </template>
 
 <script>
 import PopupLog from "../loginform/logout/PopupLog.vue";
-export default{
-  components:{PopupLog},
-  data(){
-    return{
+export default {
+  components: { PopupLog },
+  data() {
+    return {
       isPopupLogout: false,
     }
   },

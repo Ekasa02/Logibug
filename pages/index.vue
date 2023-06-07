@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100% overflow-x-hidden">
+  <div class="w-100% overflow-x-hidden font-montserrat">
     <LogibugNavbar />
     <LogibugHero />
     <AboutPage />
